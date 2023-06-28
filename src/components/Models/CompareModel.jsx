@@ -3,9 +3,9 @@ import { closeCompareModel } from "@/store/features/modelSlice";
 import { Fragment, lazy, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-// import Table from "../Table";
+import Table from "../Table";
 
-const Table = lazy(() => import("../Table"));
+// const Table = lazy(() => import("../Table"));
 
 const CompareModel = () => {
   const { isCompareModelOpen } = useSelector((state) => state.model);
