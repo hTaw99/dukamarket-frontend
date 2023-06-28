@@ -47,6 +47,5 @@ module.exports = {
   plugins: [
     require("@tailwindcss/line-clamp"),
     require("tailwindcss-inner-border"),
-    require("tailwind-scrollbar")({ nocompatible: true }),
   ],
 };

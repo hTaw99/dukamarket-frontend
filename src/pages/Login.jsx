@@ -3,13 +3,14 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { TiWarningOutline } from "react-icons/ti";
 import { useTranslation } from "react-i18next";
+import { FaCircle } from "react-icons/fa";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { t } = useTranslation(["login"]);
 
-  const { mutate: loginUser, error, isError } = useLogin();
+  const { mutate: loginUser, error, isError, isLoading } = useLogin();
   const errorMsg = error?.response?.data?.msg;
 
   const location = useLocation();
@@ -123,9 +124,15 @@ const Login = () => {
               </h1>
             )}
             <div>
-              <button className="w-full capitalize text-white bg-red-500 px-10 py-3 font-medium rounded-md">
-                {t("signin")}
-              </button>
+              {isLoading ? (
+                <div className="flex justify-center items-center w-full">
+                  <FaCircle size={10} className=" animate-bounced" />
+                </div>
+              ) : (
+                <button className="w-full capitalize text-white bg-red-500 px-10 py-3 font-medium rounded-md">
+                  {t("signin")}
+                </button>
+              )}
             </div>
           </form>
         </div>
