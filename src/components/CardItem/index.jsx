@@ -18,9 +18,6 @@ const CardItem = ({
   priceAfterDiscount,
   numReviews,
 }) => {
-
-
-  
   return (
     <>
       <motion.div
@@ -29,28 +26,28 @@ const CardItem = ({
           opacity: 100,
         }}
         transition={{ ease: "easeInOut", duration: 0.5 }}
-        className="group relative bg-white flex flex-col p-4 max-w-[225px] "
+        className="bg-white group relative flex flex-col p-6 lg:p-4  "
       >
         {/* sale */}
         {priceAfterDiscount && (
-          <div className="absolute z-10 text-sm px-3 text-white rounded-md bg-green-600">
+          <div className=" absolute z-10 text-sm px-3 text-white rounded-md bg-green-600">
             <p>-{(((price - priceAfterDiscount) / price) * 100).toFixed()}%</p>
           </div>
         )}
         {/* image */}
-        <div className="relative overflow-hidden  mb-2">
+        <div className="relative overflow-hidden self-center mb-2">
           <Link
             to={_id}
-            className=" flex justify-center items-center h-[200px] "
+            className=" flex justify-center items-center w-48 h-48 lg:w-56 lg:h-56  aspect-square "
           >
             <img
-              className="p-2 w-4/5 cursor-pointer object-contain group-hover:scale-110 transition-all duration-300"
+              className="p-2 w-4/5 cursor-pointer aspect-square object-contain group-hover:scale-110 transition-all duration-300"
               src={images[0]}
               alt="product-img"
             />
           </Link>
           {/* on hover icons */}
-          <div className="flex flex-col gap-2 absolute top-0 -right-10 group-hover:right-0 transition-all duration-300 text-gray-500">
+          <div className="flex flex-col  gap-2 absolute top-0 -right-10 group-hover:right-0 transition-all duration-300 text-gray-500">
             <QuickViewButton
               title={name}
               image={images[0]}
