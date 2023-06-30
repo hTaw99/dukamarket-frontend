@@ -40,12 +40,10 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const { recentlyViewedProducts } = useSelector((state) => state.history);
-
   const { t, i18n } = useTranslation(["header"]);
 
   useEffect(() => {
     document.addEventListener("click", handleOutsideClick, true);
-
     return () => document.removeEventListener("click", handleOutsideClick);
   }, []);
 
@@ -56,7 +54,7 @@ const Header = () => {
   }
   return (
     <>
-      <header className="bg-[#181F2B] py-6">
+      <header className="bg-[#181F2B] py-6 ">
         <div className="container flex items-center justify-between text-white">
           <Link to="/">
             <img src="/images/logo.svg" alt="Dujamarket logo" width={210} />

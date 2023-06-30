@@ -1,6 +1,7 @@
 import { useRegister } from "@/apis/auth";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { FaCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Signup = () => {
@@ -10,7 +11,6 @@ const Signup = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-
 
   const onSubmit = (data) => {
     addUser({

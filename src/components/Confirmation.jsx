@@ -1,5 +1,6 @@
 import { usePay } from "@/apis/visa";
 import { setStep } from "@/store/features/checkoutSlice";
+import { FaCircle } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 
 const Confirmation = () => {
@@ -129,7 +130,13 @@ const Confirmation = () => {
               }}
               className="text-sm font-bold rounded-md bg-red-500 text-white p-2 uppercase w-1/4"
             >
-              continue with payment
+              {isLoading ? (
+                <div className="flex justify-center items-center w-full">
+                  <FaCircle size={10} className=" animate-bounced" />
+                </div>
+              ) : (
+                "continue with payment"
+              )}
             </button>
           </div>
         </div>
