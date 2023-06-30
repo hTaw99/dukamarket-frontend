@@ -11,7 +11,6 @@ const Signup = () => {
     formState: { errors },
   } = useForm();
 
-  console.log(errors);
 
   const onSubmit = (data) => {
     addUser({

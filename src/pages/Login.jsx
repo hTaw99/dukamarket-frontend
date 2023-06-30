@@ -21,7 +21,6 @@ const Login = () => {
   const location = useLocation();
 
   const onSubmit = (data) => {
-    console.log(data);
     loginUser({ email: data.email, password: data.password });
   };
 
