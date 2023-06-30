@@ -40,7 +40,6 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const { recentlyViewedProducts } = useSelector((state) => state.history);
-  console.log(recentlyViewedProducts);
 
   const { t, i18n } = useTranslation(["header"]);
 

@@ -1,24 +1,24 @@
 import { useRegister } from "@/apis/auth";
 import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
 const Signup = () => {
-  const { mutate: addUser } = useRegister();
+  const { mutate: addUser, isLoading } = useRegister();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordConfirm, setPasswordConfirm] = useState("");
-  const [email, setEmail] = useState("");
+  console.log(errors);
 
-  const submitHandler = (event) => {
-    event.preventDefault();
-
+  const onSubmit = (data) => {
     addUser({
-      name: firstName + " " + lastName,
-      email,
-      password,
-      passwordConfirm,
+      name: data.firstName + " " + data.lastName,
+      email: data.email,
+      password: data.password,
+      passwordConfirm: data.passwordConfirm,
     });
   };
 
@@ -30,7 +30,7 @@ const Signup = () => {
             <div className="w-full max-w-md"> */}
 
           <form
-            onSubmit={submitHandler}
+            onSubmit={handleSubmit(onSubmit)}
             className="space-y-6 w-full"
             action="#"
             method="POST"
@@ -46,16 +46,17 @@ const Signup = () => {
                     First name
                   </label>
                   <input
-                    onChange={(e) => setFirstName(e.target.value)}
-                    id="first-name"
-                    name="firstname"
                     type="name"
-                    autoComplete="email"
-                    required
+                    {...register("firstName", {
+                      required: "This field is required",
+                    })}
                     className="relative block w-full appearance-none rounded-md  border 
                        outline-none border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500  sm:text-sm"
                     placeholder="First name"
                   />
+                  <span className="text-xs text-red-500">
+                    {errors.firstName?.message}
+                  </span>
                 </div>
                 <div className="w-full">
                   <label htmlFor="last-name" className="sr-only">
@@ -63,15 +64,17 @@ const Signup = () => {
                   </label>
                   <input
                     onChange={(e) => setLastName(e.target.value)}
-                    id="last-name"
-                    name="lastname"
                     type="name"
-                    autoComplete="email"
-                    required
+                    {...register("lastName", {
+                      required: "This field is required",
+                    })}
                     className="relative block w-full appearance-none rounded-md  border 
                        outline-none border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500  sm:text-sm"
                     placeholder="Last name"
                   />
+                  <span className="text-xs text-red-500">
+                    {errors.lastName?.message}
+                  </span>
                 </div>
               </div>
 
@@ -81,45 +84,55 @@ const Signup = () => {
                 </label>
                 <input
                   onChange={(e) => setEmail(e.target.value)}
-                  id="email-address"
-                  name="email"
+                  {...register("email", {
+                    required: "Please provide an email",
+                  })}
                   type="email"
                   autoComplete="email"
-                  required
                   className="relative block w-full appearance-none rounded-md  border 
                        outline-none border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500  sm:text-sm"
                   placeholder="Email address"
                 />
+                <span className="text-xs text-red-500">
+                  {errors.email?.message}
+                </span>
               </div>
               <div>
                 <label htmlFor="password" className="sr-only">
                   Password
                 </label>
                 <input
-                  onChange={(e) => setPassword(e.target.value)}
-                  id="password"
-                  name="password"
                   type="password"
                   autoComplete="current-password"
-                  required
+                  {...register("password", {
+                    required: "Please provide an password",
+                  })}
                   className="relative block w-full outline-none appearance-none rounded-md border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500  sm:text-sm"
                   placeholder="Password"
                 />
+                <span className="text-xs text-red-500">
+                  {errors.password?.message}
+                </span>
               </div>
               <div>
                 <label htmlFor="confrim-password" className="sr-only">
                   Confirm password
                 </label>
                 <input
-                  onChange={(e) => setPasswordConfirm(e.target.value)}
-                  id="confrim-password"
-                  name="confrim-password"
                   type="password"
                   autoComplete="current-password"
-                  required
+                  {...register("passwordConfirm", {
+                    required: "Please provide an password",
+                    validate: (value, formValue) =>
+                      value === formValue.password ||
+                      "Password fields not match each other",
+                  })}
                   className="relative block w-full outline-none appearance-none rounded-md border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500  sm:text-sm"
                   placeholder="Confirm password"
                 />
+                <span className="text-xs text-red-500">
+                  {errors.passwordConfirm?.message}
+                </span>
               </div>
             </div>
 
@@ -135,9 +148,15 @@ const Signup = () => {
             </div>
 
             <div>
-              <button className="w-full text-white bg-red-500 px-10 py-3 font-medium rounded-md">
-                Create account
-              </button>
+              {isLoading ? (
+                <div className="flex justify-center items-center w-full">
+                  <FaCircle size={10} className=" animate-bounced" />
+                </div>
+              ) : (
+                <button className="w-full text-white bg-red-500 px-10 py-3 font-medium rounded-md">
+                  Create account
+                </button>
+              )}
             </div>
           </form>
         </div>

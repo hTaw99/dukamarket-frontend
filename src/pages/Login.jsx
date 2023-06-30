@@ -4,10 +4,15 @@ import { Link, useLocation } from "react-router-dom";
 import { TiWarningOutline } from "react-icons/ti";
 import { useTranslation } from "react-i18next";
 import { FaCircle } from "react-icons/fa";
+import { useForm } from "react-hook-form";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
   const { t } = useTranslation(["login"]);
 
   const { mutate: loginUser, error, isError, isLoading } = useLogin();
@@ -15,9 +20,9 @@ const Login = () => {
 
   const location = useLocation();
 
-  const submitHandler = (event) => {
-    event.preventDefault();
-    loginUser({ email, password });
+  const onSubmit = (data) => {
+    console.log(data);
+    loginUser({ email: data.email, password: data.password });
   };
 
   return (
@@ -50,7 +55,7 @@ const Login = () => {
             className="space-y-6 w-full"
             action="#"
             method="POST"
-            onSubmit={submitHandler}
+            onSubmit={handleSubmit(onSubmit)}
           >
             {/* <input type="hidden" name="remember" defaultValue="true" /> */}
             <div className="rounded-md flex flex-col gap-4 ">
@@ -65,31 +70,36 @@ const Login = () => {
                   Email address
                 </label>
                 <input
-                  onChange={(e) => setEmail(e.target.value)}
-                  id="email-address"
-                  name="email"
                   type="email"
                   autoComplete="email"
-                  required
                   className="placeholder:capitalize relative block w-full appearance-none rounded-md  border 
                        outline-none border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500  sm:text-sm"
                   placeholder={t("email")}
+                  {...register("email", {
+                    required: "Please provide your email ",
+                  })}
                 />
+                <span className="text-xs text-red-500">
+                  {errors.email?.message}
+                </span>
               </div>
               <div>
                 <label htmlFor="password" className="sr-only">
                   Password
                 </label>
                 <input
-                  onChange={(e) => setPassword(e.target.value)}
-                  id="password"
-                  name="password"
                   type="password"
+                  onChange={(e) => setPassword(e.target.value)}
                   autoComplete="current-password"
-                  required
+                  {...register("password", {
+                    required: "Please provide your password ",
+                  })}
                   className="placeholder:capitalize relative block w-full outline-none appearance-none rounded-md border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500  sm:text-sm"
                   placeholder={t("password")}
                 />
+                <span className="text-xs text-red-500">
+                  {errors.password?.message}
+                </span>
               </div>
             </div>
 

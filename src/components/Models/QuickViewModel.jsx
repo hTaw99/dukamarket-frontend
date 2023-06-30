@@ -26,7 +26,6 @@ const QuickViewModel = () => {
     setAmount(1);
   }, [productToView?.colors?.[0]?.name]);
 
-  console.log(isQuickViewModelOpen);
 
   return (
     <Transition appear show={isQuickViewModelOpen} as={Fragment}>
