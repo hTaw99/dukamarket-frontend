@@ -32,7 +32,7 @@ const NewArrival = () => {
         </button>
       </div>
 
-      <div className="w-full bg-green-200">
+      <div className="w-full bg-gray-200">
         <Swiper
           spaceBetween={1}
           breakpoints={{
