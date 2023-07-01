@@ -2,6 +2,8 @@ import CardItem from "../../CardItem";
 import { useGetProducts } from "@/apis/products";
 import Skeleton from "../../CardItem/Skeleton";
 import { motion } from "framer-motion";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { FreeMode } from "swiper";
 const NewArrival = () => {
   const queries = {
     sort: "-createdAt",
@@ -17,7 +19,7 @@ const NewArrival = () => {
         y: 0,
       }}
       transition={{ ease: "easeInOut", duration: 1 }}
-      className="mb-12 border-4 bg-red-500 overflow-hidden border-red-500 rounded-md text-white flex flex-col  lg:grid lg:grid-cols-[1fr_minmax(1130px,_2fr)]"
+      className="mb-12 border-4 bg-red-500  border-red-500 rounded-md text-white flex flex-col  lg:grid lg:grid-cols-[1fr_minmax(1130px,_2fr)]"
     >
       <div className=" p-6 md:p-10">
         <h1 className="text-2xl font-semibold mb-2">
@@ -30,14 +32,37 @@ const NewArrival = () => {
         </button>
       </div>
 
-      <div className="w-full">
-        <div className=" rounded-lg gap-[1px] flex flex-col lg:grid lg:grid-cols-5 sm:grid sm:grid-cols-2 bg-gray-200">
+      <div className="w-full bg-green-200">
+        <Swiper
+          spaceBetween={1}
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+            },
+            465: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            },
+            1024: {
+              slidesPerView: 5,
+            },
+          }}
+          modules={[FreeMode]}
+          // className="  rounded-lg gap-[1px] flex flex-col lg:grid lg:grid-cols-5 sm:grid sm:grid-cols-2 bg-gray-200"
+          // className="w-full"
+        >
           {isLoading
             ? [...Array(5)].map((_, idx) => <Skeleton key={idx} />)
             : data?.pages
                 .flatMap((page) => page.products)
-                .map((p) => <CardItem key={p._id} {...p} />)}
-        </div>
+                .map((p) => (
+                  <SwiperSlide>
+                    <CardItem key={p._id} {...p} />
+                  </SwiperSlide>
+                ))}
+        </Swiper>
       </div>
     </motion.div>
   );

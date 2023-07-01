@@ -18,11 +18,11 @@ const OtpVerification = () => {
   };
 
   return (
-    <div className="2xl:w-[1570px] w-11/12 m-auto h-screen ">
-      <div className=" p-16 flex justify-center items-center   rounded-md">
+    <div className="container h-screen ">
+      <div className=" lg:p-16 flex justify-center items-center   rounded-md">
         {/* -------------------------------------------------- */}
 
-        <div className="bg-white p-8 py-10 w-1/3 rounded-md">
+        <div className="bg-white p-8 py-10 rounded-md md:w-4/6 lg:w-1/3">
           <div className="mb-6">
             <h1 className="text-2xl font-semibold mb-2">OTP Verification</h1>
             <p className="text-sm">
