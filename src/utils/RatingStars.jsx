@@ -6,11 +6,11 @@ export default function RatingStars({ averageRating, size = 20 }) {
     return (
       <span key={i}>
         {averageRating >= i + 1 ? (
-        <IoMdStar size={size} />
+        <IoMdStar className="w-4 h-4 md:w-5 md:h-5 " size={size} />
         ) : averageRating >= halfNumber ? (
-        <IoMdStarHalf size={size} />
+        <IoMdStarHalf className="w-4 h-4 md:w-5 md:h-5 " size={size} />
         ) : (
-        <IoMdStarOutline size={size} />
+        <IoMdStarOutline className="w-4 h-4 md:w-5 md:h-5 " size={size} />
         )}
       </span>
     );

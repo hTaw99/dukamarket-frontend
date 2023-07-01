@@ -30,7 +30,7 @@ const NewArrival = () => {
         </button>
       </div>
 
-      <div className="overflow-hidden rounded-lg gap-[1px] overflow-x-scroll flex flex-col lg:grid lg:grid-cols-5 sm:grid sm:grid-cols-2 bg-gray-200">
+      <div className="overflow-hidden rounded-lg gap-[1px] flex flex-col lg:grid lg:grid-cols-5 sm:grid sm:grid-cols-2 bg-gray-200">
         {isLoading
           ? [...Array(5)].map((_, idx) => <Skeleton key={idx} />)
           : data?.pages

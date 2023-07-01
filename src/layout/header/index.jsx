@@ -55,13 +55,13 @@ const Header = () => {
   return (
     <>
       <header className="bg-[#181F2B] py-6 ">
-        <div className="container flex flex-wrap   gap-4 items-center justify-between text-white">
+        <div className="container flex flex-wrap md:flex-nowrap gap-4 items-center justify-between text-white">
           <Link to="/" className="order-1 w-40 block">
             <img src="/images/logo.svg" alt="Dujamarket logo" />
           </Link>
 
           {/* Search bar */}
-          <div className=" min-w-full md:w-2/5 order-3 md:order-2 relative">
+          <div className=" w-full md:w-2/5 order-3 md:order-2 relative">
             <form className="z-10">
               <div className="flex">
                 <button
@@ -218,8 +218,10 @@ const Header = () => {
               <h3 className=" text-neutral-400">{t("favourite")}</h3>
               <h2>{t("my-wishlist")}</h2>
             </div>
-            <button
-              className="flex items-center"
+
+
+            <Link
+              className="flex items-center gap-3"
               onClick={() => disPatch(openCartSideModel())}
             >
               <div className="relative ">
@@ -239,7 +241,9 @@ const Header = () => {
                   <span className="ml-1 text-sm">EGP</span>
                 </h2>
               </div>
-            </button>
+            </Link>
+
+
           </div>
         </div>
       </header>

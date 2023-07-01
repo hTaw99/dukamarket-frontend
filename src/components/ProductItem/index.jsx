@@ -27,9 +27,12 @@ const ProductItem = ({
           </div>
         )}
 
-        <Link to={`/${_id}`} className=" mx-auto ">
+        <Link
+          to={`/${_id}`}
+          className="flex justify-center items-center mx-auto w-[150px] h-[150px]  md:w-[230px] md:h-[230px] aspect-square"
+        >
           <img
-            className=" cursor-pointer object-contain group-hover:scale-110 transition-all duration-300 w-[230px] h-[230px]"
+            className=" cursor-pointer object-contain group-hover:scale-110 transition-all duration-300 w-4/5 aspect-square"
             src={images[0]}
             alt="product-img"
           />
@@ -60,27 +63,27 @@ const ProductItem = ({
       {/* ---------- Title & Stars ------------ */}
       <div className="flex flex-col gap-2 mb-2">
         {/* ---------- Title ------------ */}
-        <h1 className="text-blue-700 font-semibold capitalize line-clamp-2">
+        <h1 className="text-sm md:text-base text-blue-700 font-semibold capitalize line-clamp-2">
           {name}
         </h1>
         {/* ---------- Stars ------------ */}
-        <div className="flex items-center gap-2">
-          <div className="flex text-yellow-500 ">
+        <div className="flex items-center justify-between gap-2 ">
+          <div className="flex text-yellow-500  ">
             <RatingStars averageRating={averageRating} />
           </div>
-          <div className="text-gray-400 text-sm">
+          <div className="text-gray-400 text-xs md:text-sm">
             <p>{numReviews} review</p>
           </div>
         </div>
       </div>
       {/* price */}
-      <div className="flex items-center gap-2">
-        <h3 className="text-neutral-900 font-semibold text-xl mb-4 flex items-start gap-1">
+      <div className="flex items-center gap-2 flex-wrap">
+        <h3 className="text-neutral-900 font-semibold text-base md:text-xl mb-4 flex items-start gap-1">
           <span className="text-sm font-light">EGP</span>{" "}
           {formatPrice(priceAfterDiscount ? priceAfterDiscount : price)}
         </h3>
         {priceAfterDiscount ? (
-          <h3 className="text-neutral-500  text-lg line-through  mb-4 flex items-start gap-1">
+          <h3 className="text-neutral-500  text-base md:text-xl line-through  mb-4 flex items-start gap-1">
             {/* <span className="text-sm font-light">EGP</span>{" "} */}
             {formatPrice(price)}
           </h3>

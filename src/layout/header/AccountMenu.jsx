@@ -9,7 +9,7 @@ export default function AccountMenu({ name }) {
   const { refetch: logoutUser } = useLogout();
 
   return (
-    <Menu as="div" className="hidden relative inline-block text-left px-6 py-2 rounded border border-gray-600">
+    <Menu as="div" className="hidden relative md:inline-block text-left px-6 py-2 rounded border border-gray-600">
       <div>
         <Menu.Button className="inline-flex flex-col w-full text-sm text-white capitalize focus:outline-none">
           <h3 className="text-neutral-400">Welcome</h3>
