@@ -1,20 +1,23 @@
 import { useForgotPassword } from "@/apis/auth";
-import { useRef } from "react";
 import Email from "@/utils/Email";
 import { render } from "@react-email/components";
 import { useSelector } from "react-redux";
 import Error from "./Error";
 import { FaCircle } from "react-icons/fa";
+import { useForm } from "react-hook-form";
 
 const ForgotPassword = () => {
-  const emailRef = useRef();
-  const { mutate: forgotPassword, isLoading } = useForgotPassword();
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm();
+  const { mutate: forgotPassword, isLoading, error } = useForgotPassword();
   const { isAuthenticated } = useSelector((state) => state.auth.user);
 
-  const submitHandler = (e) => {
-    e.preventDefault();
-
-    forgotPassword({ email: emailRef.current.value, html: render(<Email />) });
+  const onSubmit = (data) => {
+    console.log(data.email);
+    forgotPassword({ email: data.email });
   };
 
   return !isAuthenticated ? (
@@ -34,7 +37,7 @@ const ForgotPassword = () => {
             className="space-y-6 w-full"
             action="#"
             method="POST"
-            onSubmit={submitHandler}
+            onSubmit={handleSubmit(onSubmit)}
           >
             {/* <input type="hidden" name="remember" defaultValue="true" /> */}
             <div className="rounded-md flex flex-col gap-4 ">
@@ -43,16 +46,21 @@ const ForgotPassword = () => {
                   Email address
                 </label>
                 <input
-                  ref={emailRef}
-                  id="email-address"
-                  name="email"
                   type="email"
                   autoComplete="email"
-                  required
-                  className="relative block w-full appearance-none rounded-md  border 
+                  className="mb-2 relative block w-full appearance-none rounded-md  border 
                    outline-none border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500  sm:text-sm"
                   placeholder="Email address"
+                  {...register("email", {
+                    required: "Please provide your email",
+                  })}
                 />
+                <span className="text-center text-red-500">
+                  {error?.response?.data?.message}
+                </span>
+                <span className="text-xs text-red-500">
+                  {errors.email?.message}
+                </span>
               </div>
             </div>
             <div>
@@ -61,7 +69,10 @@ const ForgotPassword = () => {
                   <FaCircle size={10} className=" animate-bounced" />
                 </div>
               ) : (
-                <button className="w-full text-white bg-red-500 px-10 py-3 font-medium rounded-md">
+                <button
+                  type="submit"
+                  className="w-full text-white bg-red-500 px-10 py-3 font-medium rounded-md"
+                >
                   Continue
                 </button>
               )}

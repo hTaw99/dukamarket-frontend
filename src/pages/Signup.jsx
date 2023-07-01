@@ -13,6 +13,7 @@ const Signup = () => {
   } = useForm();
 
   const onSubmit = (data) => {
+    console.log(data)
     addUser({
       name: data.firstName + " " + data.lastName,
       email: data.email,
@@ -62,7 +63,6 @@ const Signup = () => {
                     Last name
                   </label>
                   <input
-                    onChange={(e) => setLastName(e.target.value)}
                     type="name"
                     {...register("lastName", {
                       required: "This field is required",
@@ -82,7 +82,6 @@ const Signup = () => {
                   Email address
                 </label>
                 <input
-                  onChange={(e) => setEmail(e.target.value)}
                   {...register("email", {
                     required: "Please provide an email",
                   })}
