@@ -4,17 +4,24 @@ import { IoHelpCircleOutline, IoLogOutOutline } from "react-icons/io5";
 import { AiOutlineUnorderedList } from "react-icons/ai";
 import { FiChevronDown } from "react-icons/fi";
 import { useLogout } from "@/apis/auth";
+import { BiUser } from "react-icons/bi";
 
 export default function AccountMenu({ name }) {
   const { refetch: logoutUser } = useLogout();
 
   return (
-    <Menu as="div" className="hidden relative md:inline-block text-left px-6 py-2 rounded border border-gray-600">
+    <Menu
+      as="div"
+      className=" relative md:inline-block text-left px-6 py-2 rounded md:border md:border-gray-600"
+    >
       <div>
-        <Menu.Button className="inline-flex flex-col w-full text-sm text-white capitalize focus:outline-none">
-          <h3 className="text-neutral-400">Welcome</h3>
+        <Menu.Button className="inline-flex flex-col items-center w-full text-sm text-white capitalize focus:outline-none">
+          <h3 className="text-neutral-400 hidden md:block">Welcome</h3>
+          <BiUser size={24} className="md:hidden "/>
           <div className="inline-flex items-center justify-center gap-1">
-            <h2 className="capitalize">{name.split(" ")[0]}</h2>
+            <h2 className="capitalize text-xs md:text-sm">
+              {name.split(" ")[0]}
+            </h2>
             <FiChevronDown />
           </div>
         </Menu.Button>

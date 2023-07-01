@@ -27,6 +27,7 @@ import ResetPassword from "./pages/ResetPassword";
 import Checkout from "./pages/Checkout";
 import { useTranslation } from "react-i18next";
 import AfterPayment from "./pages/AfterPayment";
+import 'swiper/css';
 
 // const Home = lazy(() => import("./pages/Home"));
 // const Layout = lazy(() => import("@/layout"));

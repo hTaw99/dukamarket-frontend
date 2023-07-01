@@ -30,13 +30,13 @@ const AddressForm = ({ setAddingNewAddress, addingNewAddress }) => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="w-2/5 mx-auto flex flex-col gap-4"
+      className="md:w-2/5 mx-auto flex flex-col gap-4"
     >
       <div>
         <input
           placeholder="Full Name"
           className="relative block w-full appearance-none rounded-md  border 
-                       outline-none border-gray-300 p-2 text-gray-900 placeholder-gray-500  sm:text-sm"
+                       outline-none border-gray-300 p-2 text-gray-900 placeholder-gray-500  text-sm md:text-base"
           {...register("fullname", {
             required: "Please provide your full name ",
           })}
@@ -46,7 +46,7 @@ const AddressForm = ({ setAddingNewAddress, addingNewAddress }) => {
       <div>
         <select
           className="relative block w-full appearance-none rounded-md  border 
-              outline-none border-gray-300 p-2 text-gray-900 placeholder-gray-500  sm:text-sm"
+              outline-none border-gray-300 p-2 text-gray-900 placeholder-gray-500  text-sm md:text-base"
           {...register("goverment", {
             required: "Area is required ",
           })}
@@ -65,7 +65,7 @@ const AddressForm = ({ setAddingNewAddress, addingNewAddress }) => {
       <div>
         <select
           className="relative block w-full appearance-none rounded-md  border 
-              outline-none border-gray-300 p-2 text-gray-900 placeholder-gray-500  sm:text-sm"
+              outline-none border-gray-300 p-2 text-gray-900 placeholder-gray-500  text-sm md:text-base"
           {...register("area", {
             required: "City is required ",
           })}
@@ -83,7 +83,7 @@ const AddressForm = ({ setAddingNewAddress, addingNewAddress }) => {
         <input
           placeholder="Email"
           className="relative block w-full appearance-none rounded-md  border 
-                       outline-none border-gray-300 p-2 text-gray-900 placeholder-gray-500  sm:text-sm"
+                       outline-none border-gray-300 p-2 text-gray-900 placeholder-gray-500  text-sm md:text-base"
           {...register("email", {
             required: "Please provide your email ",
           })}
@@ -99,7 +99,7 @@ const AddressForm = ({ setAddingNewAddress, addingNewAddress }) => {
             placeholder="XXXXXXXXX"
             type="tel"
             className="relative block w-full appearance-none rounded-md  border 
-                  outline-none border-gray-300 p-2 text-gray-900 placeholder-gray-500  sm:text-sm"
+                  outline-none border-gray-300 p-2 text-gray-900 placeholder-gray-500  text-sm md:text-base"
             {...register("phone", {
               valueAsNumber: true,
               required: "Please provide your phone number ",
@@ -115,7 +115,7 @@ const AddressForm = ({ setAddingNewAddress, addingNewAddress }) => {
           placeholder="Address"
           type="text"
           className=" relative block w-full appearance-none rounded-md  border 
-                  outline-none border-gray-300 p-2 text-gray-900 placeholder-gray-500  sm:text-sm"
+                  outline-none border-gray-300 p-2 text-gray-900 placeholder-gray-500  text-sm md:text-base"
           {...register("street", {
             required: "Please provide your address ",
           })}
@@ -129,7 +129,7 @@ const AddressForm = ({ setAddingNewAddress, addingNewAddress }) => {
           placeholder="Building name/Apartment No./Floors No."
           type="text"
           className=" relative block w-full appearance-none rounded-md  border 
-                  outline-none border-gray-300 p-2 text-gray-900 placeholder-gray-500  sm:text-sm"
+                  outline-none border-gray-300 p-2 text-gray-900 placeholder-gray-500  text-sm md:text-base"
           {...register("building")}
         />
 
@@ -156,7 +156,7 @@ const AddressForm = ({ setAddingNewAddress, addingNewAddress }) => {
 
       <button
         type="submit"
-        className="text-sm font-bold bg-red-500 text-white p-2 uppercase rounded-md"
+        className="text-xs md:text-sm font-bold bg-red-500 text-white p-2 uppercase rounded-md"
       >
         add address
       </button>

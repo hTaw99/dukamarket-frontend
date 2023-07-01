@@ -30,12 +30,14 @@ const NewArrival = () => {
         </button>
       </div>
 
-      <div className="overflow-hidden rounded-lg gap-[1px] flex flex-col lg:grid lg:grid-cols-5 sm:grid sm:grid-cols-2 bg-gray-200">
-        {isLoading
-          ? [...Array(5)].map((_, idx) => <Skeleton key={idx} />)
-          : data?.pages
-              .flatMap((page) => page.products)
-              .map((p) => <CardItem key={p._id} {...p} />)}
+      <div className="w-full">
+        <div className=" rounded-lg gap-[1px] flex flex-col lg:grid lg:grid-cols-5 sm:grid sm:grid-cols-2 bg-gray-200">
+          {isLoading
+            ? [...Array(5)].map((_, idx) => <Skeleton key={idx} />)
+            : data?.pages
+                .flatMap((page) => page.products)
+                .map((p) => <CardItem key={p._id} {...p} />)}
+        </div>
       </div>
     </motion.div>
   );

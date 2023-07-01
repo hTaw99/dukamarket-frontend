@@ -22,9 +22,9 @@ const Signup = () => {
   };
 
   return (
-    <div className="2xl:w-[1570px] w-11/12 m-auto h-screen">
+    <div className="container h-screen">
       <div className="flex h-full justify-center items-start">
-        <div className="bg-white  w-1/3 p-8 py-10  rounded-md">
+        <div className="bg-white p-8 py-10  rounded-md">
           {/* <div className="flex min-h-full w-full">
             <div className="w-full max-w-md"> */}
 

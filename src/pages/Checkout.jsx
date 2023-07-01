@@ -14,11 +14,11 @@ const Checkout = () => {
   };
 
   return (
-    <div className=" w-2/5 mx-auto ">
+    <div className="container xl:w-3/5 2xl:w-2/5 mx-auto ">
       <header className="mb-16 ">
         <nav className="text-white bg-gray-800 rounded-b-lg p-8 flex items-center justify-between">
-          <Link to="/">
-            <img src="/images/logo.svg" alt="Dujamarket logo" width={180} />
+          <Link to="/" className="w-36">
+            <img src="/images/logo.svg" alt="Dujamarket logo" />
           </Link>
           <Link to="/" className="text-xs underline capitalize">
             continue shoping

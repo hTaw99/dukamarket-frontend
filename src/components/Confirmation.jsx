@@ -23,7 +23,7 @@ const Confirmation = () => {
           <h1 className="font-semibold">Review and confirm</h1>
         </div>
         <div className=" p-10">
-          <div className="text-sm grid grid-cols-2 gap-4 mb-8">
+          <div className="text-sm grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
             {/* <div className="flex flex-col gap-2">
                 <h1 className="font-bold">Billing Address</h1>
                 <div className="rounded-md border border-gray-300 p-4">
@@ -120,7 +120,7 @@ const Confirmation = () => {
           <div className="justify-between flex items-center">
             <button
               onClick={() => dispatch(setStep(2))}
-              className="text-sm font-bold rounded-md bg-gray-200 text-gray-800 p-2 uppercase w-1/4"
+              className="text-xs md:text-sm font-bold rounded-md bg-gray-200 text-gray-800 py-2 px-4 uppercase "
             >
               back
             </button>
@@ -128,7 +128,7 @@ const Confirmation = () => {
               onClick={() => {
                 pay(myAddress._id);
               }}
-              className="text-sm font-bold rounded-md bg-red-500 text-white p-2 uppercase w-1/4"
+              className="text-xs md:text-sm font-bold rounded-md bg-red-500 text-white py-2 px-4 uppercase "
             >
               {isLoading ? (
                 <div className="flex justify-center items-center w-full">

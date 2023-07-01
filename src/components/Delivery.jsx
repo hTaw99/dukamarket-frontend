@@ -22,7 +22,7 @@ const Delivery = () => {
           <h1 className="font-semibold">Delivery and cash</h1>
         </div>
         <div className=" p-10">
-          <div className="flex justify-center items-center gap-8 pb-8 border-b border-gray-300">
+          <div className="flex flex-wrap justify-center items-center gap-4  md:gap-8 pb-8 border-b border-gray-300">
             {/* ############## input ########## */}
 
             <div className=" flex justify-center items-center gap-4 p-4 rounded border border-gray-300">
@@ -86,8 +86,8 @@ const Delivery = () => {
             </div>
           </div>
 
-          <div className="py-4 px-10 mb-8">
-            {cartQuery?.cart.items.map((item) => (
+          <div className="pt-4 md:py-4 md:px-10 mb-8">
+            {cartQuery?.cart?.items?.map((item) => (
               <div
                 key={item._id}
                 className="flex justify-between items-center mb-4 pb-4 border-b border-gray-300 "
@@ -116,7 +116,7 @@ const Delivery = () => {
               </div>
             ))}
 
-            <div className="text-sm w-1/4 ml-auto">
+            <div className="text-sm ml-auto">
               <div className="flex justify-between">
                 <h1>Item Sub-Total:</h1>
                 <span>{formatPrice(cartQuery?.cart.totalPrice)} EGP</span>
@@ -140,13 +140,13 @@ const Delivery = () => {
           <div className="justify-between flex items-center">
             <button
               onClick={() => dispatch(setStep(1))}
-              className="text-sm font-bold rounded-md bg-gray-200 text-gray-800 p-2 uppercase w-1/4"
+              className="text-xs md:text-sm font-bold rounded-md bg-gray-200 text-gray-800 px-4 py-2 uppercase "
             >
               back
             </button>
             <button
               onClick={() => dispatch(setStep(3))}
-              className="text-sm font-bold rounded-md bg-red-500 text-white p-2 uppercase w-1/4"
+              className="text-xs md:text-sm font-bold rounded-md bg-red-500 text-white px-4 py-2 uppercase "
             >
               continue
             </button>

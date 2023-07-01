@@ -8,6 +8,7 @@ import ProductSkeleton from "@/components/CardItem/Skeleton";
 import Error from "./Error";
 import { FaSpinner } from "react-icons/fa";
 
+
 const Products = () => {
   const { filters } = useSelector((state) => state.filter);
 
@@ -40,7 +41,9 @@ const Products = () => {
         <div className="flex items-center text-sm md:text-base justify-between mb-2">
           <FiltersComponent />
           {data && (
-            <p className="text-gray-400 ">{data.pages[0].totalCount} Items</p>
+            <p className="text-gray-400 hidden md:inline-block">
+              {data.pages[0].totalCount} Items
+            </p>
           )}
         </div>
         <SelectedFiltersComponent filters={selectedFilters} />

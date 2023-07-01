@@ -25,20 +25,20 @@ const Login = () => {
   };
 
   return (
-    <div className="2xl:w-[1570px] w-11/12 m-auto h-screen ">
-      <div className="grid grid-cols-2  items-start p-16 px-40  rounded-md">
+    <div className="container  h-screen">
+      <div className="flex flex-col gap-4 md:grid md:grid-cols-2  items-start xl:p-16 xl:px-40  rounded-md">
         {/* -------------------------------------------------- */}
 
         <div>
-          <h1 className="w-2/3 capitalize leading-normal text-4xl font-semibold mb-6 rtl:text-3xl text-gray-800">
+          <h1 className="w-2/3 capitalize leading-normal text-2xl md:text-4xl font-semibold mb-2 md:mb-6 rtl:text-3xl text-gray-800">
             {t("dukamarket-account")}
           </h1>
-          <p className="mb-10 w-5/6 text-gray-500">
+          <p className="mb-4 md:mb-10 w-5/6 text-gray-500">
             {t("dukamarket-account-description")}
           </p>
           <Link
             to="/signup"
-            className="capitalize text-gray-800 border border-gray-400 px-10 py-3 font-medium rounded-md rtl:font-semibold"
+            className="capitalize inline-block underline md:no-underline text-gray-800 md:border md:border-gray-400 md:px-10 md:py-3 font-medium rounded-md rtl:font-semibold"
           >
             {t("create-account")}
           </Link>
@@ -46,7 +46,7 @@ const Login = () => {
 
         {/* -------------------------------------------------- */}
 
-        <div className="bg-white p-8 py-10 rounded-md">
+        <div className="bg-white w-full p-8 py-10 rounded-md">
           {/* <div className="flex min-h-full w-full">
             <div className="w-full max-w-md"> */}
 

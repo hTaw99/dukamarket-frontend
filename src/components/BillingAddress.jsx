@@ -53,7 +53,7 @@ const BillingAddress = () => {
             <>
               <h2 className="font-medium mb-4">Shipping Address</h2>
               <div
-                className={`grid grid-cols-2 auto-rows-fr gap-4 ${
+                className={`grid grid-cols-1 md:grid-cols-2 auto-rows-fr gap-4 ${
                   isNoAddressSelected ? "mb-2" : "mb-8"
                 } `}
               >
@@ -131,7 +131,7 @@ const BillingAddress = () => {
                     setIsNoAddressSelected(false);
                     setAddingNewAddress(!addingNewAddress);
                   }}
-                  className="flex justify-center items-center w-1/4 text-sm font-semibold bg-gray-100 text-gray-800 p-2 rounded-md capitalize"
+                  className="flex justify-center items-center text-sm font-semibold bg-gray-100 text-gray-800 p-2 rounded-md capitalize"
                 >
                   <BsPlus size={18} />
                   add new address
@@ -139,7 +139,7 @@ const BillingAddress = () => {
               </div>
 
               {addingNewAddress && (
-                <div>
+                <div className="mb-4">
                   <AddressForm
                     addAddress={addAddress}
                     setAddingNewAddress={setAddingNewAddress}
@@ -159,7 +159,7 @@ const BillingAddress = () => {
                       setIsNoAddressSelected(true);
                     }
                   }}
-                  className="w-1/4 text-sm font-bold bg-red-500 text-white p-2 uppercase rounded-md"
+                  className=" text-xs md:text-sm font-bold bg-red-500 text-white py-2 px-4 uppercase rounded-md"
                 >
                   continue
                 </button>

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { BsHandbag } from "react-icons/bs";
 import { BiChevronDown } from "react-icons/bi";
 import { FiSearch } from "react-icons/fi";
+import { VscSignIn } from "react-icons/vsc";
 import { useDispatch, useSelector } from "react-redux";
 import { openCartSideModel } from "@/store/features/modelSlice";
 import { useQueryClient } from "@tanstack/react-query";
@@ -200,16 +201,18 @@ const Header = () => {
             </form>
           </div>
 
-          <div className="flex gap-8 items-center text-sm order-2 md:order-3">
+          <div className="flex gap-4 md:gap-8 items-center text-sm order-2 md:order-3">
             {isAuthenticated ? (
               <AccountMenu name={name} />
             ) : (
               <div>
-                <h3 className=" text-neutral-400 capitalize">
+                <h3 className="hidden md:block text-neutral-400 capitalize">
                   {t("my-account")}
                 </h3>
                 <Link className=" capitalize" to="login">
-                  {t("sign-in")}
+                  <VscSignIn className="md:hidden" size={30} />
+
+                  <span className="hidden md:block">{t("sign-in")}</span>
                 </Link>
               </div>
             )}
@@ -218,7 +221,6 @@ const Header = () => {
               <h3 className=" text-neutral-400">{t("favourite")}</h3>
               <h2>{t("my-wishlist")}</h2>
             </div>
-
 
             <Link
               className="flex items-center gap-3"
@@ -242,8 +244,6 @@ const Header = () => {
                 </h2>
               </div>
             </Link>
-
-
           </div>
         </div>
       </header>

@@ -3,7 +3,6 @@ import Hero from "@/components/Hero";
 import NewArrival from "@/components/home/newArrival";
 import { useGetCategories } from "@/apis/public";
 
-
 const Home = () => {
   const { data: categories } = useGetCategories();
   return (
@@ -13,7 +12,6 @@ const Home = () => {
       {categories?.map((cat) => (
         <Category key={cat._id} {...cat} />
       ))}
-
     </div>
   );
 };
