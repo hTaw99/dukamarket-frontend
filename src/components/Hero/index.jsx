@@ -31,7 +31,7 @@ const Hero = () => {
         <img className="object-cover  w-full h-full " src={mobile} alt="" />
       </div>
 
-      <div className="bg-[#F0567A] text-white p-6 md:px-12  lg:px-6 lg:py-1 rounded-md flex justify-between items-center">
+      <div className="bg-[#F0567A] text-white p-6 md:px-12  lg:px-6  rounded-md flex justify-between items-center">
         <div>
           <h2 className="uppercase mb-4 py-1 px-4 bg-white text-[#F0567A] font-semibold inline-block text-xs sm:text-sm rounded-sm">
             mobile
@@ -43,7 +43,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="bg-[#965EE3] text-white p-6 md:px-12 lg:px-6 lg:py-1 rounded-md flex justify-between items-center">
+      <div className="bg-[#965EE3] text-white p-6 md:px-12 lg:px-6  rounded-md flex justify-between items-center">
         <div>
           <h2 className="uppercase mb-4 py-1 px-4 bg-white text-[#965EE3] font-semibold inline-block text-xs sm:text-sm rounded-sm">
             week deals

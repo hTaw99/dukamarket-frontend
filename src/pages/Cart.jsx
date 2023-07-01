@@ -10,7 +10,7 @@ const Cart = () => {
   // #######################################################
 
   return (
-    <div className="2xl:w-[1570px] w-11/12 m-auto min-h-screen grid grid-cols-[3fr_1fr] gap-4">
+    <div className="container flex flex-col lg:grid lg:grid-cols-[3fr_1fr] gap-4">
       <div className="bg-white rounded-md p-6 ">
         <h1 className="text-2xl capitalize font-semibold text-gray-800 mb-6">
           your cart
@@ -28,7 +28,7 @@ const Cart = () => {
           <div className="flex flex-col mt-8 gap-4 justify-center items-center">
             <img
               src="images/noCartFound.svg"
-              className="w-1/12 "
+              className="w-1/12  "
               alt="SVG logo image"
             />
             <h1 className="text-gray-800 text-center">Your cart is empty</h1>

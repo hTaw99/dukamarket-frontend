@@ -55,13 +55,13 @@ const Header = () => {
   return (
     <>
       <header className="bg-[#181F2B] py-6 ">
-        <div className="container flex items-center justify-between text-white">
-          <Link to="/">
-            <img src="/images/logo.svg" alt="Dujamarket logo" width={210} />
+        <div className="container flex flex-wrap   gap-4 items-center justify-between text-white">
+          <Link to="/" className="order-1 w-40 block">
+            <img src="/images/logo.svg" alt="Dujamarket logo" />
           </Link>
 
           {/* Search bar */}
-          <div className=" w-2/5  relative">
+          <div className=" min-w-full md:w-2/5 order-3 md:order-2 relative">
             <form className="z-10">
               <div className="flex">
                 <button
@@ -71,7 +71,7 @@ const Header = () => {
                     isListOpen
                       ? " ltr:rounded-bl-none rtl:rounded-br-none rtl:rounded-tr-lg ltr:rounded-tl-lg"
                       : " rtl:rounded-r-lg ltr:rounded-l-lg "
-                  } border-b ltr:border-r rtl:border-l z-50 inline-flex items-center flex-shrink-0 gap-1 p-4 text-sm font-medium text-center text-gray-900 border-gray-300 capitalize bg-gray-100  hover:bg-gray-200 focus:outline-none hover:text-red-500`}
+                  } border-b ltr:border-r rtl:border-l z-50 inline-flex items-center flex-shrink-0 gap-1 p-3 md:p-4 text-sm font-medium text-center text-gray-900 border-gray-300 capitalize bg-gray-100  hover:bg-gray-200 focus:outline-none hover:text-red-500`}
                   type="button"
                 >
                   {t("all-categories")}
@@ -86,7 +86,7 @@ const Header = () => {
                       isListOpen
                         ? "rtl:rounded-bl-none rtl:rounded-tl-lg "
                         : " rtl:rounded-l-lg ltr:rounded-r-lg"
-                    } rtl:border-r-2 rtl:border-r-gray-50 ltr:rounded-tr-lg ltr:border-l-2 ltr:border-l-gray-50 z-20 block w-full p-4 text-sm text-gray-900 border 
+                    } rtl:border-r-2 rtl:border-r-gray-50 ltr:rounded-tr-lg ltr:border-l-2 ltr:border-l-gray-50 z-20 block w-full p-3 md:p-4 text-sm text-gray-900 border 
                      border-gray-300  bg-gray-50 placeholder:capitalize focus:outline-none`}
                     placeholder={t("search")}
                     onChange={(event) => setQuery(event.target.value)}
@@ -200,7 +200,7 @@ const Header = () => {
             </form>
           </div>
 
-          <div className="flex gap-8 items-center text-sm">
+          <div className="flex gap-8 items-center text-sm order-2 md:order-3">
             {isAuthenticated ? (
               <AccountMenu name={name} />
             ) : (
@@ -214,32 +214,32 @@ const Header = () => {
               </div>
             )}
 
-            <div className="capitalize">
+            <div className="capitalize hidden ">
               <h3 className=" text-neutral-400">{t("favourite")}</h3>
               <h2>{t("my-wishlist")}</h2>
             </div>
-            <Link
-              className="flex items-center gap-2"
+            <button
+              className="flex items-center"
               onClick={() => disPatch(openCartSideModel())}
             >
-              <div className="relative">
-                <BsHandbag size={32} />
+              <div className="relative ">
+                <BsHandbag className="w-7 h-7 md:w-8 md:h-8" />
                 <span
                   className={`absolute -top-2  ${
                     i18n.language === "ar" ? "-right-2" : "-left-2"
-                  } bg-red-500 h-6 w-6 flex justify-center items-center rounded-full`}
+                  } bg-red-500 w-5 h-5 md:h-6 md:w-6 flex justify-center items-center rounded-full`}
                 >
                   {cartQuery?.cart?.totalItems || 0}
                 </span>
               </div>
-              <div>
+              <div className="hidden md:block">
                 <h3 className="capitalize text-neutral-400">{t("cart")}</h3>
                 <h2>
                   {formatPrice(cartQuery?.cart?.totalPrice || 0)}
                   <span className="ml-1 text-sm">EGP</span>
                 </h2>
               </div>
-            </Link>
+            </button>
           </div>
         </div>
       </header>

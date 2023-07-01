@@ -26,7 +26,7 @@ const Category = ({ _id, name, images }) => {
         <h1 className="text-2xl font-semibold text-gray-900 capitalize">
           {name}
         </h1>
-        <ul className="flex gap-10">
+        <ul className="lg:flex gap-10 hidden select-none pointer-events-none">
           <li className="hover:text-red-500">
             <NavLink>Best Seller </NavLink>
           </li>
@@ -41,9 +41,9 @@ const Category = ({ _id, name, images }) => {
           </li>
         </ul>
       </div>
-      <div className="grid grid-cols-[1fr_max-content_1fr] rounded-md overflow-hidden">
+      <div className="flex flex-col lg:grid lg:grid-cols-[1fr_1fr_1fr] rounded-md overflow-hidden">
         <CategoryList images={images} />
-        <div className="grid grid-cols-3 bg-gray-200 gap-[1px] border-r">
+        <div className=" grid grid-cols-1 md:grid-cols-3 bg-gray-200 gap-[1px] border-r">
           {isLoading
             ? [...Array(3)].map((_, idx) => <Skeleton key={idx} />)
             : restProducts.map((p) => <CardItem key={p._id} {...p} />)}

@@ -12,10 +12,10 @@ const CategoryProduct = ({
 }) => {
   return (
     <div className=" bg-white p-6">
-      <div className=" max-w-[60%] m-auto bg-red-500 ">
+      <div className=" w-56 h-56  aspect-square m-auto ">
         <Link to={`/${_id}`}>
           <img
-            className=" w-full h-full cursor-pointer hover:scale-110 transition-all duration-300"
+            className=" w-4/5 aspect-square cursor-pointer hover:scale-110 transition-all duration-300"
             src={images[0]}
             alt=""
           />
