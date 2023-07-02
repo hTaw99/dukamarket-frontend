@@ -6,11 +6,9 @@ import { AiOutlineClose } from "react-icons/ai";
 import AddToCartButton from "@/utils/AddToCartButton";
 import { formatPrice } from "@/utils/formatPrice";
 import RatingStars from "@/utils/RatingStars";
-import { useTranslation } from "react-i18next";
+import { closeCompareModel } from "@/store/features/modelSlice";
 
 const Table = () => {
-  console.log("table render");
-  const { t } = useTranslation("compare");
 
   const fieldToCompare = [
     { id: 1, name: "image" },
@@ -33,7 +31,7 @@ const Table = () => {
       } rounded-md `}
     >
       <h1 className="capitalize text-2xl font-medium pb-3 mb-3 border-b border-slate-300">
-        {t("headline")}
+      compare table
       </h1>
       {productsToCompare.length === 0 ? (
         <div className="h-full flex justify-center items-center">
@@ -71,6 +69,7 @@ const Table = () => {
                             <div className="flex  justify-between items-start">
                               <Link
                                 to={`/${product?.sku}`}
+                                onClick={() => dispatch(closeCompareModel())}
                                 className="hover:text-red-500 text-gray-700 font-semibold capitalize text-base block line-clamp-2"
                               >
                                 {product?.title}

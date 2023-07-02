@@ -29,7 +29,7 @@ const AddToCartButton = ({ amount = 1, color, productId }) => {
           productId,
         })
       }
-      className={` relative flex justify-center items-center ${
+      className={` w-full relative flex justify-center items-center ${
         isLoading || isSuccess ? "min-h-[44px]" : ""
       } text-white text-center capitalize font-semibold text-sm bg-red-500 py-3 mt-auto flex-1 rounded-md`}
     >

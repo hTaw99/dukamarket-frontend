@@ -5,21 +5,19 @@ import { Link } from "react-router-dom";
 
 const ListItem = ({ product }) => {
   return (
-    <div className="group grid grid-cols-[2fr_4fr]  gap-4 p-4  border border-gray-300 rounded-md">
-      <div className="overflow-hidden rounded-md">
-        <Link to={`/${product?._id}`}>
+    <div className="group flex  gap-4 p-4  border border-gray-300 rounded-md">
+        <Link to={`/${product?._id}`} className="self-center w-20 h-20 aspect-square">
           <img
-            className="w-full h-full object-contain group-hover:scale-110 transition-all duration-300"
+            className="w-full aspect-square h-full object-contain group-hover:scale-110 transition-all duration-300"
             src={product?.images[0]}
             alt=""
           />
         </Link>
-      </div>
-      <div className="flex flex-col ">
+      <div className="flex flex-col justify-between">
         <div className="flex justify-between gap-2 ">
           <Link
             to={`/${product?._id}`}
-            className="hover:text-red-500 text-gray-700 font-semibold capitalize mb-4 text-base block line-clamp-2"
+            className="hover:text-blue-600 text-gray-700 font-semibold capitalize mb-4 text-sm md:text-base block line-clamp-2"
           >
             {product?.name}
           </Link>
@@ -29,16 +27,16 @@ const ListItem = ({ product }) => {
         </div>
 
         {/* ----------- price ------------- */}
-        <div className="flex items-center mb-2 gap-2">
-          <h3 className="text-gray-700 font-semibold text-base flex gap-1">
+        <div className="flex flex-wrap items-center mb-2 gap-2">
+          <h3 className="text-gray-700  font-semibold text-sm md:text-base">
             {formatPrice(product?.priceAfterDiscount || product?.price)}
-            <span className="font-medium">EGP</span>{" "}
+            <span className="font-medium"> EGP</span>{" "}
           </h3>
 
           {product.priceAfterDiscount && (
-            <h3 className="text-gray-500 line-through flex justify-start gap-1">
+            <h3 className="text-gray-500 line-through  justify-start gap-1">
               {formatPrice(product?.price)}
-              <span className=" text-base">EGP</span>{" "}
+              <span className=" text-xs md:text-base"> EGP</span>{" "}
             </h3>
           )}
         </div>

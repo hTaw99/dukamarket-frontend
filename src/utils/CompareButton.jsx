@@ -2,7 +2,6 @@ import { addProductToCompare } from "@/store/features/compareSlice";
 import { openCompareModel } from "@/store/features/modelSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { BiLayer } from "react-icons/bi";
-import { useTranslation } from "react-i18next";
 
 const CompareButton = ({
   title,
@@ -15,10 +14,10 @@ const CompareButton = ({
   averageRating,
   numReviews,
 }) => {
-  // const { t } = useTranslation("compare");
   const dispatch = useDispatch();
   const { productsToCompare } = useSelector((state) => state.compare);
   const selectedProduct = productsToCompare?.find((p) => p.sku === id);
+
 
   let obj = {
     image,
@@ -52,6 +51,7 @@ const CompareButton = ({
   return (
     <button
       onClick={() => {
+        console.log("aas");
         dispatch(addProductToCompare(obj));
         dispatch(openCompareModel());
       }}

@@ -4,6 +4,7 @@ import Skeleton from "../../CardItem/Skeleton";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper";
+import { Link } from "react-router-dom";
 const NewArrival = () => {
   const queries = {
     sort: "-createdAt",
@@ -27,9 +28,9 @@ const NewArrival = () => {
           Limited, Just Now!
         </h1>
         <h2 className="text-8xl lg:text-9xl mb-6">50%</h2>
-        <button className="font-semibold py-2 px-4 text-sm md:text-base md:py-4 md:px-8 rounded-md text-red-500 bg-white ">
+        <Link to={"/products"} className="font-semibold py-2 px-4 text-sm md:text-base md:py-4 md:px-8 rounded-md text-red-500 bg-white ">
           See More
-        </button>
+        </Link>
       </div>
 
       <div className="w-full bg-gray-200">

@@ -21,7 +21,8 @@ const SimilarProducts = ({ productId }) => {
           <TbChevronsRight />
         </div>
       </div>
-      <div className="grid grid-rows-[repeat(3,minmax(150px,33%))] gap-4">
+      <div className="sm:grid-cols-2 grid lg:flex xl:flex-col gap-4">
+        {/* md:grid-rows-[repeat(3,minmax(150px,33%))] */}
         {isLoading
           ? Array.from({ length: 3 }, () => <ListItemSkeleton />)
           : similarProducts?.map((product) => (

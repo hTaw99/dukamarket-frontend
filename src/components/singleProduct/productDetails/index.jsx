@@ -50,7 +50,7 @@ const ProductDetail = ({
         {/* --------- IMG ----------- */}
         <div className="flex flex-col gap-4 ">
           <div
-            className=" lg:w-full border p-4 border-gray-300 flex justify-center items-center w-full h-48 aspect-square rounded-md overflow-hidden cursor-zoom-in "
+            className=" border p-4 border-gray-300 flex justify-center items-center w-full h-48 lg:h-full aspect-square rounded-md overflow-hidden cursor-zoom-in "
             onClick={() => dispatch(openPictureModel())}
           >
             <img

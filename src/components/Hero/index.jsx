@@ -2,6 +2,7 @@ import React from "react";
 import tablets from "../../assets/tablets.png";
 import mobile from "../../assets/mobile.jpg";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -24,9 +25,9 @@ const Hero = () => {
             brilliant shopping day
           </h1>
           <p className="text-sm sm:text-lg mb-4">Discount 50% OFF This Week</p>
-          <button className="font-semibold text-sm md:text-base md:py-4 md:px-8 py-2 px-4  rounded-md bg-red-500 ">
+          <Link to={"/products"} className="font-semibold text-sm md:text-base md:py-4 md:px-8 py-2 px-4  rounded-md bg-red-500 ">
             Discover Now
-          </button>
+          </Link>
         </div>
         <img className="object-cover  w-full h-full " src={mobile} alt="" />
       </div>

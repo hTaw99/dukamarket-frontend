@@ -22,8 +22,8 @@ const Product = () => {
 
 
   return (
-    <div className="2xl:w-[1570px] w-11/12 m-auto min-h-screen">
-      <div className="grid grid-cols-1 lg:grid-cols-[5fr_2fr] w-full gap-4  mb-8">
+    <div className="container min-h-screen">
+      <div className="grid grid-cols-1 xl:grid-cols-[5fr_2fr] w-full gap-4  mb-8">
         {/* Product */}
         {isLoading ? (
           <SingleProductSkeleton />

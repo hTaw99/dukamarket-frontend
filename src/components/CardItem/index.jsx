@@ -38,7 +38,7 @@ const CardItem = ({
         <div className="relative overflow-hidden self-center mb-2">
           <Link
             to={_id}
-            className=" flex justify-center items-center w-48 h-48 aspect-square "
+            className=" flex justify-center items-center w-40 h-40 md:w-48 md:h-48 aspect-square "
           >
             <img
               className="p-2 w-4/5 cursor-pointer aspect-square object-contain group-hover:scale-110 transition-all duration-300"
@@ -99,7 +99,7 @@ const CardItem = ({
         </div>
 
         {/* -------------- price ------------------ */}
-        <div className="flex items-center gap-2">
+        <div className="flex items-center flex-wrap gap-2">
           <h3 className="text-neutral-900 font-semibold flex justify-start gap-1 text-xl mb-4">
             <span className="text-sm font-light">EGP</span>
             {formatPrice(priceAfterDiscount || price)}
@@ -112,7 +112,9 @@ const CardItem = ({
         </div>
 
         {/* -------------- button ------------------ */}
-        <AddToCartButton color={colors[0]._id} productId={_id} />
+        <div className="mt-auto w-full">
+          <AddToCartButton color={colors[0]._id} productId={_id} />
+        </div>
       </motion.div>
     </>
   );

@@ -109,7 +109,7 @@ const QuickViewModel = () => {
                     <ul className="mb-6 text-gray-500">
                       <li>{productToView.description}</li>
                     </ul>
-                    <div className="flex justify-between gap-4">
+                    {/* <div className="flex justify-between gap-4">
                       <AddToCartButton
                         amount={amount}
                         productId={productToView?.id}
@@ -143,7 +143,7 @@ const QuickViewModel = () => {
                           +
                         </div>
                       </div>
-                    </div>
+                    </div> */}
                     {/* colors */}
                     <div className="mt-4">
                       <h1 className="mb-2 ">Color:</h1>
