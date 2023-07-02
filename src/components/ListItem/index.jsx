@@ -4,8 +4,6 @@ import { formatPrice } from "@/utils/formatPrice";
 import { Link } from "react-router-dom";
 
 const ListItem = ({ product }) => {
-  
-
   return (
     <div className="group grid grid-cols-[2fr_4fr]  gap-4 p-4  border border-gray-300 rounded-md">
       <div className="overflow-hidden rounded-md">
@@ -25,7 +23,7 @@ const ListItem = ({ product }) => {
           >
             {product?.name}
           </Link>
-          <p className="text-green-600 text-xs flex-shrink-0">
+          <p className="hidden lg:inline-block text-green-600 text-xs flex-shrink-0">
             {product.quantity} in stock
           </p>
         </div>
@@ -47,22 +45,26 @@ const ListItem = ({ product }) => {
         {/* ----------- price ------------- */}
 
         {/* ----------- buttons ------------- */}
-        <div className="flex justify-between gap-2 mt-auto">
-          <AddToCartButton
-            color={product.colors[0]._id}
-            productId={product._id}
-          />
-          <QuickViewButton
-            title={product.name}
-            image={product.images[0]}
-            price={product.price}
-            id={product._id}
-            description={product.description}
-            colors={product.colors}
-            priceAfterDiscount={product.priceAfterDiscount}
-            averageRating={product.averageRating}
-            numReviews={product.numReviews}
-          />
+        <div className="hidden  justify-between gap-2 mt-auto">
+          <div className="hidden">
+            <AddToCartButton
+              color={product.colors[0]._id}
+              productId={product._id}
+            />
+          </div>
+          <div className="hidden">
+            <QuickViewButton
+              title={product.name}
+              image={product.images[0]}
+              price={product.price}
+              id={product._id}
+              description={product.description}
+              colors={product.colors}
+              priceAfterDiscount={product.priceAfterDiscount}
+              averageRating={product.averageRating}
+              numReviews={product.numReviews}
+            />
+          </div>
         </div>
         {/* ----------- buttons ------------- */}
       </div>

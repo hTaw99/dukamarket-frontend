@@ -19,7 +19,7 @@ const NewArrival = () => {
         y: 0,
       }}
       transition={{ ease: "easeInOut", duration: 1 }}
-      className="mb-12 border-4 bg-red-500  border-red-500 rounded-md text-white flex flex-col  lg:grid lg:grid-cols-[1fr_minmax(1130px,_2fr)]"
+      className="mb-12 border-4 bg-red-500  border-red-500 rounded-md text-white flex flex-col lg:grid lg:grid-cols-[0.5fr_2fr]"
     >
       <div className=" p-6 md:p-10">
         <h1 className="text-2xl font-semibold mb-2">
@@ -45,12 +45,16 @@ const NewArrival = () => {
             768: {
               slidesPerView: 3,
             },
-            1024: {
+            1280: {
+              slidesPerView: 4,
+            },
+
+            1535: {
               slidesPerView: 5,
             },
           }}
-          modules={[FreeMode]}
-          // className="  rounded-lg gap-[1px] flex flex-col lg:grid lg:grid-cols-5 sm:grid sm:grid-cols-2 bg-gray-200"
+          // modules={[FreeMode]}
+          className="  rounded-lg gap-[1px] flex flex-col lg:grid lg:grid-cols-5 sm:grid sm:grid-cols-2 bg-gray-200"
           // className="w-full"
         >
           {isLoading

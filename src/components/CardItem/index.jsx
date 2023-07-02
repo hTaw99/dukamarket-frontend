@@ -38,7 +38,7 @@ const CardItem = ({
         <div className="relative overflow-hidden self-center mb-2">
           <Link
             to={_id}
-            className=" flex justify-center items-center w-48 h-48 lg:w-56 lg:h-56  aspect-square "
+            className=" flex justify-center items-center w-48 h-48 aspect-square "
           >
             <img
               className="p-2 w-4/5 cursor-pointer aspect-square object-contain group-hover:scale-110 transition-all duration-300"

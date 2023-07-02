@@ -22,8 +22,6 @@ const ProductDetail = ({
   priceAfterDiscount,
   averageRating,
 }) => {
- 
-
   const [amount, setAmount] = useState(1);
   const [colorChoosed, setColorChoosed] = useState(colors[0].name);
 
@@ -48,15 +46,15 @@ const ProductDetail = ({
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-8">
+      <div className="flex flex-col lg:grid  lg:grid-cols-2 gap-8">
         {/* --------- IMG ----------- */}
         <div className="flex flex-col gap-4 ">
           <div
-            className=" w-full border p-4 border-gray-300 rounded-md overflow-hidden cursor-zoom-in "
+            className=" lg:w-full border p-4 border-gray-300 flex justify-center items-center w-full h-48 aspect-square rounded-md overflow-hidden cursor-zoom-in "
             onClick={() => dispatch(openPictureModel())}
           >
             <img
-              className="w-[505px] h-[505px] object-contain"
+              className="w-4/5 h-4/5 aspect-square object-contain"
               src={shownPicture}
               alt=""
             />
@@ -84,34 +82,36 @@ const ProductDetail = ({
 
         {/* --------- Details ----------- */}
         <div className="flex flex-col">
-          <h1 className="text-2xl font-semibold text-blue-700 mb-2">{name}</h1>
+          <h1 className="text-xl lg:text-2xl font-semibold text-blue-700 mb-4">
+            {name}
+          </h1>
           <div className="flex mb-4 items-center gap-4">
             <div className="flex text-yellow-500 ">
               <RatingStars averageRating={averageRating} />
             </div>
-            <p className="text-gray-400 text-sm px-4 border-r border-l">
+            <p className="text-gray-400 text-xs lg:text-sm px-4 border-r border-l">
               {numReviews} review
             </p>
             <button
-              className="text-gray-400 text-sm capitalize hover:text-red-500"
+              className="text-gray-400 text-xs lg:text-sm capitalize hover:text-red-500"
               onClick={addReviewHandler}
             >
               Add your review
             </button>
           </div>
           <div className="flex items-center gap-2 mb-6 pb-6 border-b border-gray-200">
-            <h3 className="text-gray-800 font-semibold text-3xl flex justify-start gap-1">
+            <h3 className="text-gray-800 font-semibold text-2xl lg:text-3xl flex justify-start gap-1">
               <span className="text-base font-medium">EGP</span>{" "}
               {formatPrice(priceAfterDiscount || price)}
             </h3>
             {priceAfterDiscount && (
-              <h3 className="text-gray-500 line-through text-xl">
+              <h3 className="text-gray-500 line-through text-lg lg:text-xl">
                 {formatPrice(price)}
                 <span className="">EGP</span>
               </h3>
             )}
           </div>
-          <ul className="mb-6 text-gray-500">
+          <ul className="text-sm lg:text-base mb-6 text-gray-500">
             <li>{description}</li>
           </ul>
           <div className=" mb-6 pb-6 border-b border-gray-200 flex flex-col gap-4">
@@ -175,7 +175,7 @@ const ProductDetail = ({
             {/* colors */}
           </div>
 
-          <div className="grid grid-cols-[1fr_2fr]">
+          <div className="text-sm lg:text-base grid grid-cols-[1fr_2fr]">
             <p>SKU:</p>
             <p className="text-gray-500">{_id}</p>
             <p>Category:</p>

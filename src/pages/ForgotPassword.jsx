@@ -16,9 +16,10 @@ const ForgotPassword = () => {
   const { isAuthenticated } = useSelector((state) => state.auth.user);
 
   const onSubmit = (data) => {
-    console.log(data.email);
     forgotPassword({ email: data.email });
   };
+
+
 
   return !isAuthenticated ? (
     <div className="container h-screen ">
