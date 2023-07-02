@@ -14,7 +14,7 @@ const AfterPayment = () => {
   const { orderId } = useParams();
 
   return (
-    <div className=" w-2/5 mx-auto ">
+    <div className=" container ">
       <header className="mb-16 ">
         <nav className="text-white bg-gray-800 rounded-b-lg p-8 flex items-center justify-between">
           <Link to="/">

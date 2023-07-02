@@ -86,9 +86,11 @@ const CardItem = ({
 
         <div className="flex flex-col gap-2 mb-2">
           {/* ------------- Title --------------- */}
-          <h1 className="text-blue-700 font-semibold capitalize line-clamp-2">
-            {name}
-          </h1>
+          <Link to={_id}>
+            <h1 className="text-blue-700 font-semibold capitalize line-clamp-2">
+              {name}
+            </h1>
+          </Link>
           {/* ------------- Stars --------------- */}
 
           <div className="flex items-center gap-2">

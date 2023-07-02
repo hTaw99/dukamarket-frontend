@@ -38,7 +38,7 @@ const Products = () => {
     <div className="container bg-white rounded-md p-6">
       <h1 className="mb-12 text-2xl md:text-3xl font-semibold">All Products</h1>
       <div className="pb-4 border-b border-gray-300 ">
-        <div className="flex items-center text-sm md:text-base justify-between mb-2">
+        <div className="flex items-center overflow-x-auto  text-sm md:text-base justify-between mb-2">
           <FiltersComponent />
           {data && (
             <p className="text-gray-400 hidden md:inline-block">
