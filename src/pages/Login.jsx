@@ -13,7 +13,7 @@ const Login = () => {
     formState: { errors },
   } = useForm();
 
-  const { t } = useTranslation(["login"]);
+  // const { t } = useTranslation(["login"]);
 
   const { mutate: loginUser, error, isError, isLoading } = useLogin();
   const errorMsg = error?.response?.data?.msg;
@@ -31,16 +31,20 @@ const Login = () => {
 
         <div>
           <h1 className="w-2/3 capitalize leading-normal text-2xl md:text-4xl font-semibold mb-2 md:mb-6 rtl:text-3xl text-gray-800">
-            {t("dukamarket-account")}
+            {/* {t("dukamarket-account")} */}
+            Login To Your DukaMarket Account
           </h1>
           <p className="mb-4 md:mb-10 w-5/6 text-gray-500">
-            {t("dukamarket-account-description")}
+            {/* {t("dukamarket-account-description")} */}
+            login or create an account to access your latest shopping lists
+            within our website and DukaMarket Shopping app.
           </p>
           <Link
             to="/signup"
             className="capitalize inline-block underline md:no-underline text-gray-800 md:border md:border-gray-400 md:px-10 md:py-3 font-medium rounded-md rtl:font-semibold"
           >
-            {t("create-account")}
+            {/* {t("create-account")} */}
+            Create An Account
           </Link>
         </div>
 
@@ -73,7 +77,7 @@ const Login = () => {
                   autoComplete="email"
                   className="placeholder:capitalize relative block w-full appearance-none rounded-md  border 
                        outline-none border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500  sm:text-sm"
-                  placeholder={t("email")}
+                  placeholder={"email"}
                   {...register("email", {
                     required: "Please provide your email ",
                   })}
@@ -94,7 +98,7 @@ const Login = () => {
                     required: "Please provide your password ",
                   })}
                   className="placeholder:capitalize relative block w-full outline-none appearance-none rounded-md border border-gray-300 px-3 py-3 text-gray-900 placeholder-gray-500  sm:text-sm"
-                  placeholder={t("password")}
+                  placeholder={"password"}
                 />
                 <span className="text-xs text-red-500">
                   {errors.password?.message}
@@ -114,7 +118,7 @@ const Login = () => {
                   htmlFor="remember-me"
                   className="ltr:ml-2 rtl:mr-2 block text-sm capitalize text-gray-900"
                 >
-                  {t("remember-me")}
+                  {"remember me"}
                 </label>
               </div>
 
@@ -123,7 +127,8 @@ const Login = () => {
                   to="/forgot-password"
                   className="font-medium capitalize text-blue-600 hover:text-blue-500"
                 >
-                  {t("forgot-password")}
+                  {/* {t("forgot-password")} */}
+                  forgot your password
                 </Link>
               </div>
             </div>
@@ -139,7 +144,8 @@ const Login = () => {
                 </div>
               ) : (
                 <button className="w-full capitalize text-white bg-red-500 px-10 py-3 font-medium rounded-md">
-                  {t("signin")}
+                  {/* {t("signin")} */}
+                  sign in
                 </button>
               )}
             </div>

@@ -42,7 +42,7 @@ export default function Topbar() {
         <ul className='flex justify-self-end'>
           <li className='items-center hidden sm:flex'>
             <FiPhoneCall className='ltr:mr-2 rtl:ml-2' />
-            0123456789
+            0111 598 2393
           </li>
           <span className='items-center hidden mx-2 text-gray-200 sm:flex'>
             |

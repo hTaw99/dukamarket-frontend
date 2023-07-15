@@ -5,15 +5,16 @@ import Header from "./header";
 import Navbar from "./navbar";
 import Footer from "./footer";
 
-// import CartSideModel from "@/components/Models/CartSideModel";
-// import QuickViewModel from "@/components/Models/QuickViewModel";
-// import PictureModel from "@/components/Models/PictureModel";
-// import CompareModel from "@/components/Models/CompareModel";
+import CartSideModel from "@/components/Models/CartSideModel";
+import QuickViewModel from "@/components/Models/QuickViewModel";
+import PictureModel from "@/components/Models/PictureModel";
+import CompareModel from "@/components/Models/CompareModel";
+import { useSelector } from "react-redux";
 
-const CartSideModel = lazy(() => import("@/components/Models/CartSideModel"));
-const QuickViewModel = lazy(() => import("@/components/Models/QuickViewModel"));
-const PictureModel = lazy(() => import("@/components/Models/PictureModel"));
-const CompareModel = lazy(() => import("@/components/Models/CompareModel"));
+// const CartSideModel = lazy(() => import("@/components/Models/CartSideModel"));
+// const QuickViewModel = lazy(() => import("@/components/Models/QuickViewModel"));
+// const PictureModel = lazy(() => import("@/components/Models/PictureModel"));
+// const CompareModel = lazy(() => import("@/components/Models/CompareModel"));
 
 export default function LayoutPage() {
   const { pathname } = useLocation();

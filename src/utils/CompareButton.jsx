@@ -51,7 +51,6 @@ const CompareButton = ({
   return (
     <button
       onClick={() => {
-        console.log("aas");
         dispatch(addProductToCompare(obj));
         dispatch(openCompareModel());
       }}

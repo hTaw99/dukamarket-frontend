@@ -33,7 +33,7 @@ const Products = () => {
     isLoading,
     isFetchingNextPage,
   } = useGetProducts({ filters, queries: { limit: 12 } });
-  if (error) return <Error />;
+
   return (
     <div className="container bg-white rounded-md p-6">
       <h1 className="mb-12 text-2xl md:text-3xl font-semibold">All Products</h1>
