@@ -64,7 +64,7 @@ const Comment = ({
         </div>
         <p className="text-gray-400 mb-3">{date[0]}</p>
         <p className="text-lg flex-wrap mb-6">{comment}</p>
-        <div className="flex justify-between items-center">
+        <div className="flex md:flex-row flex-col gap-4 justify-between md:items-center">
           <p className="flex items-center gap-2 text-sm md:text-base text-gray-500">
             {isRecommended ? (
               <>
@@ -79,17 +79,17 @@ const Comment = ({
           </p>
 
           {isMyOwnReview && (
-            <div className="flex gap-4">
+            <div className="flex gap-2">
               <button
                 onClick={() => dispatch(enableEditing())}
-                className="flex gap-2 items-center px-4 py-2 rounded-md border border-neutral-300"
+                className="flex text-sm gap-2 items-center px-2 py-3 md:px-4 md:py-2 rounded-md border border-neutral-300"
               >
                 <FiEdit />
                 Edit your review
               </button>
               <button
                 onClick={() => deleteReview(_id)}
-                className="flex gap-2 items-center text-red-500  rounded-md "
+                className="flex gap-2 text-sm items-center md:px-4 md:py-2 text-red-500  rounded-md "
               >
                 <AiOutlineDelete />
                 Delete your review

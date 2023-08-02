@@ -13,7 +13,7 @@ const Reviews = ({ averageRating, numReviews, _id }) => {
   
 
   return (
-    <div className="grid md:grid-cols-[2fr_4fr]  gap-20 ">
+    <div className="grid md:grid-cols-[2fr_4fr] gap-8  md:gap-20 ">
       <div className="flex flex-col">
         <h1 className="md:text-xl text-lg text-gray-700 font-semibold">
           Customer reviews
@@ -97,7 +97,7 @@ const Reviews = ({ averageRating, numReviews, _id }) => {
       <div className="flex flex-col gap-6">
         {/* {isLoading && <h1>Loading...</h1>} */}
         {data?.reviews.length === 0 ? (
-          <div className="flex flex-col h-full gap-4 justify-center items-center">
+          <div className="flex  flex-col h-full gap-4 justify-center items-center">
             <img
               src="images/noReviewsFound.svg"
               className="w-[8%]  "
