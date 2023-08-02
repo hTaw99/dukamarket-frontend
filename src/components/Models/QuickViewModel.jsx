@@ -32,7 +32,7 @@ const QuickViewModel = () => {
       <Dialog
         initialFocus={ref}
         as="div"
-        className="relative z-10"
+        className="relative z-50"
         onClose={() => dispatch(closeQuickViewModel())}
       >
         <Transition.Child
@@ -60,15 +60,15 @@ const QuickViewModel = () => {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-5xl transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-                <div className=" grid grid-cols-2 gap-8">
+              <Dialog.Panel className=" w-5/6 h-[600px] overflow-y-auto lg:max-w-5xl transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <div className=" flex flex-col h-full md:grid md:grid-cols-2 gap-8">
                   {/* --------- IMG ----------- */}
                   <div
-                    className=" p-4 w-full flex justify-center items-cneter border border-gray-300 rounded-md overflow-hidden cursor-zoom-in "
+                    className=" p-4 w-full min-h-[150px] flex justify-center items-cneter border border-gray-300 rounded-md overflow-hidden cursor-zoom-in "
                     onClick={() => dispatch(openPictureModel())}
                   >
                     <img
-                      className="w-[505px] h-[505px] object-contain"
+                      className="w-1/2 md:w-1/2 object-contain"
                       src={productToView.image}
                       alt=""
                     />
@@ -77,7 +77,7 @@ const QuickViewModel = () => {
                   {/* --------- Details ----------- */}
                   <div className="flex flex-col">
                     {/* <Link to={`/${productToView.id}`}> */}
-                    <h1 className="text-2xl font-semibold text-blue-700 mb-2">
+                    <h1 className="text-lg md:text-2xl font-semibold text-blue-700 mb-2">
                       {productToView.title}
                     </h1>
                     {/* </Link> */}
@@ -92,7 +92,7 @@ const QuickViewModel = () => {
                       </p>
                     </div>
                     <div className="flex items-center gap-2 mb-6 pb-6 border-b border-gray-200">
-                      <h3 className="text-gray-800 font-semibold text-3xl flex justify-start gap-1">
+                      <h3 className="text-gray-800 font-semibold text-xl md:text-3xl flex justify-start gap-1">
                         <span className="text-base font-medium">EGP</span>
                         {formatPrice(
                           productToView.priceAfterDiscount ||
@@ -100,13 +100,13 @@ const QuickViewModel = () => {
                         )}
                       </h3>
                       {productToView.priceAfterDiscount && (
-                        <h3 className="text-gray-500 flex gap-1 line-through text-xl">
+                        <h3 className="text-gray-500 flex gap-1 line-through text-lg md:text-xl">
                           {formatPrice(productToView.price)}
                           <span>EGP</span>
                         </h3>
                       )}
                     </div>
-                    <ul className="mb-6 text-gray-500">
+                    <ul className="text-sm md:text-base mb-6 text-gray-500">
                       <li>{productToView.description}</li>
                     </ul>
                     {/* <div className="flex justify-between gap-4">
@@ -146,7 +146,7 @@ const QuickViewModel = () => {
                     </div> */}
                     {/* colors */}
                     <div className="mt-4">
-                      <h1 className="mb-2 ">Color:</h1>
+                      <h1 className="mb-2 text-sm md:text-base ">Color:</h1>
                       <div className="flex ">
                         {productToView?.colors?.map((color) => (
                           <div

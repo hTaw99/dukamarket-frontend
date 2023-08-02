@@ -28,13 +28,13 @@ const Footer = () => {
           <h2 className="text-xl font-semibold text-center">
             Sign Up To Newsletter
           </h2>
-          <h3 className="w-2/5 text-sm text-center">
+          <h3 className="md:w-2/5 w-3/4 text-sm text-center">
             Sign up for all the news about our latest arrivals and get an
             exlusive early access shopping. Join 60.000+ Subscribes and get a
             new discount coupon on every Saturday.
           </h3>
         </div>
-        <div className="grid grid-cols-4  py-12 my-8 text-sm border-gray-700 gap-x-4 border-y">
+        <div className="grid md:grid-cols-4 grid-cols-2 gap-y-10 py-12 my-8 text-sm border-gray-700 gap-x-4 border-y">
           {/* <div className="flex flex-col gap-6">
             <h2 className="text-base font-semibold">Looking For Store?</h2>
             <p>
@@ -42,14 +42,14 @@ const Footer = () => {
               USA.
             </p>
           </div> */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col md:gap-6 gap-4">
             <h2 className="text-base font-semibold">Need Help?</h2>
             <div>
               <div className="flex items-center gap-2 mb-2">
                 <FiHeadphones size={48} className="text-red-500" />
                 <div>
                   <h3 className=" text-neutral-400">Got Question?</h3>
-                  <h2 className="text-lg font-semibold text-red-500">
+                  <h2 className=" md:text-lg font-semibold text-red-500">
                     +02 0111 598 2393
                   </h2>
                 </div>
@@ -62,7 +62,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col md:gap-6 gap-4">
             <h2 className="text-base font-semibold">My Account</h2>
             <ul className="flex flex-col gap-2">
               {myAccount.map((item, i) => (
@@ -75,7 +75,7 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col md:gap-6 gap-4">
             <h2 className="text-base font-semibold">My Quick Links</h2>
             <ul className="flex flex-col gap-2">
               {quickLinks.map((item, i) => (
@@ -88,7 +88,7 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col md:gap-6 gap-4">
             <h2 className="text-base font-semibold">My Customer Care</h2>
             <ul className="flex flex-col gap-2">
               {customerCare.map((item, i) => (

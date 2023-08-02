@@ -20,6 +20,7 @@ const Product = () => {
     throw error;
   }
 
+  // const isLoading = true
 
   return (
     <div className="container min-h-screen">
