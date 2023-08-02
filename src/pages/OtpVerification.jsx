@@ -10,7 +10,7 @@ const OtpVerification = () => {
     setOtp(value);
   };
 
-  const { mutate: verifyOtp, isLoading } = useOtpVerification();
+  const { mutate: verifyOtp, isLoading, error } = useOtpVerification();
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -37,6 +37,7 @@ const OtpVerification = () => {
             onSubmit={submitHandler}
           >
             <OtpInput value={otp} onChange={onChange} valueLength={4} />
+            {error && <div className="text-red-500 text-center">{error.response.data.message}</div>}
 
             <div>
               {isLoading ? (

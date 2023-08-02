@@ -65,7 +65,7 @@ const Header = () => {
           <div className=" w-full md:w-2/5 order-3 md:order-2 relative">
             <form className="z-10">
               <div className="flex">
-                <button
+                {/* <button
                   id="dropdown-button"
                   data-dropdown-toggle="dropdown"
                   className={` ${
@@ -77,17 +77,17 @@ const Header = () => {
                 >
                   {t("all-categories")}
                   <BiChevronDown />
-                </button>
+                </button> */}
 
                 <div className=" w-full">
                   {/* ############################################################################## */}
                   <input
                     onClick={() => setIsListOpen(!isListOpen)}
-                    className={`${
+                    className={` ${
                       isListOpen
                         ? "rtl:rounded-bl-none rtl:rounded-tl-lg "
-                        : " rtl:rounded-l-lg ltr:rounded-r-lg"
-                    } rtl:border-r-2 rtl:border-r-gray-50 ltr:rounded-tr-lg ltr:border-l-2 ltr:border-l-gray-50 z-20 block w-full p-3 md:p-4 text-sm text-gray-900 border 
+                        : " rtl:rounded-l-lg ltr:rounded-bl-lg ltr:rounded-r-lg"
+                    } ltr:rounded-tl-lg rtl:border-r-2 rtl:border-r-gray-50 ltr:rounded-tr-lg ltr:border-l-2 ltr:border-l-gray-50 z-20 block w-full p-3 md:p-4 text-sm text-gray-900 border 
                      border-gray-300  bg-gray-50 placeholder:capitalize focus:outline-none`}
                     placeholder={t("search")}
                     onChange={(event) => setQuery(event.target.value)}

@@ -13,18 +13,18 @@ const Reviews = ({ averageRating, numReviews, _id }) => {
   
 
   return (
-    <div className="grid grid-cols-[2fr_6fr] gap-20">
+    <div className="grid md:grid-cols-[2fr_4fr]  gap-20 ">
       <div className="flex flex-col">
-        <h1 className="text-xl text-gray-700 font-semibold">
+        <h1 className="md:text-xl text-lg text-gray-700 font-semibold">
           Customer reviews
         </h1>
         <div className="pb-6 mb-6 border-b border-gray-300">
           <div className="flex gap-4 items-start mb-4">
             <div>
-              <h1 className="text-lg text-neutral-700">
+              <h1 className="md:text-lg text-neutral-700">
                 {averageRating} <span className="">out of 5</span>{" "}
               </h1>
-              <h3 className="text-sm text-gray-500">{numReviews} Reviews</h3>
+              <h3 className="text-xs md:text-sm text-gray-500">{numReviews} Reviews</h3>
             </div>
             <div className="flex  text-yellow-500 ">
               <RatingStars size={24} averageRating={averageRating} />
@@ -73,10 +73,10 @@ const Reviews = ({ averageRating, numReviews, _id }) => {
           </div>
         </div>
         <div className="flex flex-col gap-1 mb-4 ">
-          <h1 className="text-xl text-gray-700 font-semibold">
+          <h1 className="text-lg md:text-xl text-gray-700 font-semibold">
             Review this product
           </h1>
-          <p>Share your thoughts with other customers</p>
+          <p className="text-sm md:text-base">Share your thoughts with other customers</p>
         </div>
         {isAuthenticated ? (
           <ReviewForm _id={_id} />

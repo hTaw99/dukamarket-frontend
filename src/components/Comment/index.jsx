@@ -65,7 +65,7 @@ const Comment = ({
         <p className="text-gray-400 mb-3">{date[0]}</p>
         <p className="text-lg flex-wrap mb-6">{comment}</p>
         <div className="flex justify-between items-center">
-          <p className="flex items-center gap-2 text-gray-500">
+          <p className="flex items-center gap-2 text-sm md:text-base text-gray-500">
             {isRecommended ? (
               <>
                 <AiOutlineCheckCircle /> Yes, I recommend this product

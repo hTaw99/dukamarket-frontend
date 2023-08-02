@@ -1,22 +1,23 @@
 import { useResetPassword } from "@/apis/auth";
 import React, { useState } from "react";
+import { FaCircle } from "react-icons/fa";
 import { useParams } from "react-router-dom";
 
 const ResetPassword = () => {
   const [password, setPassword] = useState("");
-  const { mutate: resetPassword } = useResetPassword();
+  const { mutate: resetPassword, isLoading } = useResetPassword();
   const { resetToken } = useParams();
 
   const submitHandler = (e) => {
     e.preventDefault();
-    resetPassword({password, resetToken});
+    resetPassword({ password, resetToken });
   };
   return (
     <div className="container h-screen ">
       <div className=" lg:p-16 flex justify-center items-center   rounded-md">
         {/* -------------------------------------------------- */}
 
-        <div className="bg-white p-8 py-10 w-1/3 rounded-md">
+        <div className="bg-white p-8 py-10 md:w-4/6 lg:w-1/3 rounded-md">
           <div className="mb-6">
             <h1 className="text-2xl font-semibold mb-2">Set new password</h1>
             <p className="text-sm">
@@ -64,9 +65,16 @@ const ResetPassword = () => {
               </div> */}
             </div>
             <div>
-              <button className="w-full text-white bg-red-500 px-10 py-3 font-medium rounded-md">
-                Reset
-              </button>
+              {" "}
+              {isLoading ? (
+                <div className="flex justify-center items-center w-full">
+                  <FaCircle size={10} className=" animate-bounced" />
+                </div>
+              ) : (
+                <button className="w-full text-white bg-red-500 px-10 py-3 font-medium rounded-md">
+                  Reset
+                </button>
+              )}
             </div>
           </form>
         </div>
