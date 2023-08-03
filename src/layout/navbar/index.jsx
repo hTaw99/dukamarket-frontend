@@ -13,14 +13,17 @@ export default function Navbar() {
   const { data: categories } = useGetCategories();
   const { t, i18n } = useTranslation(["navbar"]);
 
+  console.log(isCategoryListOpen);
+
   useEffect(() => {
     document.addEventListener("click", handleOutsideClick, true);
     return () => document.removeEventListener("click", handleOutsideClick);
   }, []);
 
   const listRef = useRef();
+  const linkRef = useRef();
   function handleOutsideClick(e) {
-    if (listRef.current && !listRef.current.contains(e.target))
+    if (listRef.current && !listRef.current.contains(e.target)) 
       setIsCategoryListOpen(false);
   }
 
@@ -29,13 +32,16 @@ export default function Navbar() {
       <div className="relative container  py-3 text-white">
         <ul className="flex gap-10">
           <li
-            onClick={() => setIsCategoryListOpen(prev => !prev)}
             className={`flex items-center gap-2  ${
               i18n.language === "ar" ? "border-l pl-10" : "border-r pr-10"
             }   border-gray-500 cursor-pointer hover:text-red-500`}
           >
             <RxHamburgerMenu size={24} />
-            <Link className="text-sm font-semibold uppercase">
+            <Link
+              ref={linkRef}
+              onClick={() => setIsCategoryListOpen((prev) => !prev)}
+              className="text-sm font-semibold uppercase"
+            >
               {t("all-categories")}
             </Link>
           </li>
@@ -65,7 +71,7 @@ export default function Navbar() {
                   duration: 0.5,
                 }}
                 ref={listRef}
-                className="-z-[1000] bg-white text-black p-8 pt-6 flex flex-col gap-2  shadow-lg rounded-md"
+                className="-z-[1000] bg-white border text-black p-8 pt-6 flex flex-col gap-2  shadow-lg rounded-md"
               >
                 <h1 className="text-gray-400 capitalize pb-4 border-b mb-2">
                   categories

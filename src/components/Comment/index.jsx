@@ -85,14 +85,14 @@ const Comment = ({
                 className="flex text-sm gap-2 items-center px-2 py-3 md:px-4 md:py-2 rounded-md border border-neutral-300"
               >
                 <FiEdit />
-                Edit your review
+                Edit review
               </button>
               <button
                 onClick={() => deleteReview(_id)}
                 className="flex gap-2 text-sm items-center md:px-4 md:py-2 text-red-500  rounded-md "
               >
                 <AiOutlineDelete />
-                Delete your review
+                Delete review
               </button>
             </div>
           )}
