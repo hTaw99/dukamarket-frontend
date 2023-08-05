@@ -14,6 +14,8 @@ import { Tailwind } from "@react-email/tailwind";
 import * as React from "react";
 
 export const Email = ({name}) => (
+  
+
   <Tailwind
     config={{
       theme: {
