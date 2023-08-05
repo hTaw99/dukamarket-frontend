@@ -28,9 +28,9 @@ const Email = ({ name }) => (
     <Preview>
       The sales intelligence platform that helps you uncover qualified leads.
     </Preview>
-    <Body style={body}>
+    <Body >
       <Container>
-        <Text style={welcome}>Welcome</Text>
+        <Text >Welcome</Text>
         <Text className="capitalize">Hi {name},</Text>
         <Text>
           Welcome to DukaMarket, the sales intelligence platform that helps you
@@ -38,8 +38,6 @@ const Email = ({ name }) => (
         </Text>
         <Section>
           <Button
-            
-            style={btn}
             href="https://dukamarket.vercel.app"
           >
             Get started
@@ -58,15 +56,3 @@ const Email = ({ name }) => (
 
 export default Email;
 
-const welcome = {
-  fontSize: "24px",
-  fontWeight: "font-bold",
-};
-
-const body = {
-  fontFamily: "inter",
-};
-
-const btn = {
-  backgroundColor: "red",
-};
