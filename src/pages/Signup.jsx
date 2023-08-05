@@ -15,9 +15,9 @@ const Signup = () => {
     formState: { errors },
   } = useForm();
 
-  const email = render(<Email name={data.firstName} />);
-
+  
   const onSubmit = (data) => {
+    const email = render(<Email name={data.firstName} />);
     addUser({
       name: data.firstName + " " + data.lastName,
       email: data.email,
