@@ -5,7 +5,6 @@ import { TiWarningOutline } from "react-icons/ti";
 import { useTranslation } from "react-i18next";
 import { FaCircle } from "react-icons/fa";
 import { useForm } from "react-hook-form";
-// import { renderToString } from "react-dom/server";
 
 const Login = () => {
   const {

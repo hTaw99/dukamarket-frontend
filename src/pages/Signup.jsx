@@ -7,7 +7,8 @@ import Email from "@/utils/Email";
 import { render } from "@react-email/render";
 
 const Signup = () => {
-  const { mutate: addUser, isLoading } = useRegister();
+  const { mutate: addUser, isLoading, isError, error } = useRegister();
+  const errorMsg = error?.response?.data?.msg;
   const {
     register,
     handleSubmit,
@@ -20,7 +21,7 @@ const Signup = () => {
       email: data.email,
       password: data.password,
       passwordConfirm: data.passwordConfirm,
-      emailToSend: render(<Email name={data.email} />),
+      emailToSend: render(<Email name={data.firstName} />),
     });
   };
 
@@ -146,6 +147,12 @@ const Signup = () => {
                 </a>
               </div>
             </div>
+
+            {isError && (
+              <h1 className="text-center text-red-500 capitalize">
+                {errorMsg}
+              </h1>
+            )}
 
             <div>
               {isLoading ? (
