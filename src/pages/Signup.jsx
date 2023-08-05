@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FaCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Email from "@/utils/Email";
+import { render } from "@react-email/render";
 
 const Signup = () => {
   const { mutate: addUser, isLoading } = useRegister();
@@ -13,12 +15,12 @@ const Signup = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data)
     addUser({
       name: data.firstName + " " + data.lastName,
       email: data.email,
       password: data.password,
       passwordConfirm: data.passwordConfirm,
+      emailToSend: render(<Email name={data.email} />),
     });
   };
 

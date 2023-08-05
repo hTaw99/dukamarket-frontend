@@ -5,6 +5,7 @@ import { TiWarningOutline } from "react-icons/ti";
 import { useTranslation } from "react-i18next";
 import { FaCircle } from "react-icons/fa";
 import { useForm } from "react-hook-form";
+// import { renderToString } from "react-dom/server";
 
 const Login = () => {
   const {
@@ -25,7 +26,7 @@ const Login = () => {
   };
 
   return (
-    <div className="container  h-screen">
+    <div className="container h-screen">
       <div className="flex flex-col gap-4 md:grid md:grid-cols-2  items-start xl:p-16 xl:px-40  rounded-md">
         {/* -------------------------------------------------- */}
 
