@@ -29,7 +29,7 @@ const Email = ({ name }) => (
         The sales intelligence platform that helps you uncover qualified leads.
       </Preview>
       <Body className="font-sans">
-        <Container>
+        {/* <Container>
           <Text className="font-bold text-xl">Welcome</Text>
           <Text className="uppercase">Hi {name},</Text>
           <Text>
@@ -52,7 +52,7 @@ const Email = ({ name }) => (
             The DukaMarket team
           </Text>
           <Hr />
-        </Container>
+        </Container> */}
       </Body>
     </Html>
   </Tailwind>
