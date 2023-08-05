@@ -32,7 +32,7 @@ export const Email = ({name}) => (
         <Container>
           
           <Text className="font-bold text-xl">Welcome</Text>
-          <Text>Hi {name},</Text>
+          <Text className="uppercase">Hi {name},</Text>
           <Text>
             Welcome to DukaMarket, the sales intelligence platform that helps
             you uncover qualified leads and close deals faster.

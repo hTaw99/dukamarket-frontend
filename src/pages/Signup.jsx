@@ -21,7 +21,7 @@ const Signup = () => {
       email: data.email,
       password: data.password,
       passwordConfirm: data.passwordConfirm,
-      // emailToSend: render(<Email name={data.firstName} />),
+      emailToSend: render(<Email name={data.firstName} />),
     });
   };
 
