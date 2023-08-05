@@ -9,21 +9,19 @@ import {
   Preview,
   Section,
   Text,
+  Tailwind,
 } from "@react-email/components";
-import { Tailwind } from "@react-email/tailwind";
-import * as React from "react";
+// import { Tailwind } from "@react-email/tailwind";
 
-export const Email = ({name}) => (
-  
-
+const Email = ({ name }) => (
   <Tailwind
-    config={{
-      theme: {
-        fontFamily: {
-          sans: ["inter"],
-        },
-      },
-    }}
+  // config={{
+  //   theme: {
+  //     fontFamily: {
+  //       sans: ["inter"],
+  //     },
+  //   },
+  // }}
   >
     <Html>
       <Head />
@@ -32,7 +30,6 @@ export const Email = ({name}) => (
       </Preview>
       <Body className="font-sans">
         <Container>
-          
           <Text className="font-bold text-xl">Welcome</Text>
           <Text className="uppercase">Hi {name},</Text>
           <Text>

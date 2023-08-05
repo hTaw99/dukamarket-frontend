@@ -16,9 +16,7 @@ const Signup = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log("before submitted")
     const emailHtml = render(<Email name={data.firstName} />);
-    console.log("after render")
     addUser({
       name: data.firstName + " " + data.lastName,
       email: data.email,
@@ -26,8 +24,6 @@ const Signup = () => {
       passwordConfirm: data.passwordConfirm,
       emailToSend: emailHtml,
     });
-
-    console.log("submitted")
   };
 
   return (
