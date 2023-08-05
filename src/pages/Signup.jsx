@@ -15,13 +15,15 @@ const Signup = () => {
     formState: { errors },
   } = useForm();
 
+  const email = render(<Email name={data.firstName} />);
+
   const onSubmit = (data) => {
     addUser({
       name: data.firstName + " " + data.lastName,
       email: data.email,
       password: data.password,
       passwordConfirm: data.passwordConfirm,
-      emailToSend: render(<Email name={data.firstName} />),
+      emailToSend: email,
     });
   };
 
