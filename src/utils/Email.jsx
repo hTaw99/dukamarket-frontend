@@ -14,15 +14,15 @@ import {
 // import { Tailwind } from "@react-email/tailwind";
 
 const Email = ({ name }) => (
-  <Tailwind
-    config={{
-      theme: {
-        fontFamily: {
-          sans: ["inter"],
-        },
-      },
-    }}
-  >
+  // <Tailwind
+  //   config={{
+  //     theme: {
+  //       fontFamily: {
+  //         sans: ["inter"],
+  //       },
+  //     },
+  //   }}
+  // >
     <Html>
       {/* <Head />
     <Preview>
@@ -55,7 +55,7 @@ const Email = ({ name }) => (
         {/* </Container> */}
       </Body>
     </Html>
-  </Tailwind>
+  // </Tailwind>
 
   // <>
   //   <div>
