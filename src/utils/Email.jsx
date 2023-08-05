@@ -15,23 +15,23 @@ import {
 
 const Email = ({ name }) => (
   <Tailwind
-  config={{
-    theme: {
-      fontFamily: {
-        sans: ["inter"],
+    config={{
+      theme: {
+        fontFamily: {
+          sans: ["inter"],
+        },
       },
-    },
-  }}
+    }}
   >
-  <Html>
-    <Head />
+    <Html>
+      {/* <Head />
     <Preview>
       The sales intelligence platform that helps you uncover qualified leads.
-    </Preview>
-    <Body className="font-sans">
-      <Container>
+    </Preview> */}
+      <Body className="font-sans">
+        {/* <Container> */}
         <Text className="font-bold text-xl">Welcome</Text>
-        <Text className="capitalize">Hi {name},</Text>
+        {/* <Text className="capitalize">Hi {name},</Text>
         <Text>
           Welcome to DukaMarket, the sales intelligence platform that helps
           you uncover qualified leads and close deals faster.
@@ -51,10 +51,10 @@ const Email = ({ name }) => (
           <br />
           The DukaMarket team
         </Text>
-        <Hr />
-      </Container>
-    </Body>
-  </Html>
+        <Hr /> */}
+        {/* </Container> */}
+      </Body>
+    </Html>
   </Tailwind>
 
   // <>
@@ -72,7 +72,7 @@ const Email = ({ name }) => (
   //                         <div>
   //                           <div>
   //                             <table
-                               
+
   //                             >
   //                               <tbody>
   //                                 <tr>
@@ -92,7 +92,7 @@ const Email = ({ name }) => (
   //                             </table>
 
   //                             <table
-                              
+
   //                             >
   //                               <tbody>
   //                                 <tr>
@@ -122,7 +122,7 @@ const Email = ({ name }) => (
   //                         <div>
   //                           <div>
   //                             <table
-                               
+
   //                             >
   //                               <tbody>
   //                                 <tr>
@@ -152,14 +152,14 @@ const Email = ({ name }) => (
   //                             </table>
 
   //                             <table
-                               
+
   //                             >
   //                               <tbody>
   //                                 <tr>
   //                                   <td>
   //                                     <div>
   //                                       <v:roundrect
-                                         
+
   //                                       >
   //                                         <w:anchorlock  />
   //                                         <center>
@@ -181,7 +181,7 @@ const Email = ({ name }) => (
   //                             </table>
 
   //                             <table
-                               
+
   //                             >
   //                               <tbody>
   //                                 <tr>
@@ -210,7 +210,7 @@ const Email = ({ name }) => (
   //                         <div>
   //                           <div>
   //                             <table
-                              
+
   //                             >
   //                               <tbody>
   //                                 <tr>
@@ -244,7 +244,7 @@ const Email = ({ name }) => (
   //                         <div>
   //                           <div>
   //                             <table
-                              
+
   //                             >
   //                               <tbody>
   //                                 <tr>
